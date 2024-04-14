@@ -1,9 +1,10 @@
+import FormConfigurator from "../../Molecules/FormConfigurator/FormConfigurator";
 
 
 function CvForgeForm() {
     return (
         <>
-            <div>test</div>
+            <FormConfigurator />
         </>
     );
 }
