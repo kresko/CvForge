@@ -1,8 +1,15 @@
+import './FormConfigurator.css';
+import FormConfiguratorButton from '../../Atoms/FormConfiguratorButton/FormConfiguratorButton';
 
 function FormConfigurator() {
     return (
         <>
-            <div>Form Configurator</div>
+            <div className='form-configurator'>
+                <div className='form-configurator-button-container'>
+                    <FormConfiguratorButton content={ 'Content' }/>
+                    <FormConfiguratorButton content={ 'Customize' }/>
+                </div>
+            </div>
         </>
     );
 }

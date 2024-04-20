@@ -1,8 +1,14 @@
+import FormDataHydratorButton from "../../Atoms/FormDataHydratorButton/FormDataHydratorButton";
 
 function FormDataHydrator() {
     return (
         <>
-            <div>FormDataHydrator</div>
+            <div className="form-data-hydrator">
+                <div className="form-data-hydrator-button-container">
+                    <FormDataHydratorButton content={ 'clear resume' }/>
+                    <FormDataHydratorButton content={ 'Load example' }/>
+                </div>
+            </div>
         </>
     );
 }

@@ -1,0 +1,9 @@
+.form-configurator {
+    display: inherit;
+    margin: 10px 20px;
+}
+
+.form-configurator-button-container {
+    display: inherit;
+    flex-direction: column;
+}
