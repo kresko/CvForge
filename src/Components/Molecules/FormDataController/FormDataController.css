@@ -1,0 +1,17 @@
+:root {
+    --alice-blue: #f0f8ff;
+}
+
+.personal-details {
+    background-color: var(--alice-blue);
+}
+
+.education-section {
+    background-color: var(--alice-blue);
+    margin: 20px auto 0 auto;
+}
+
+.experience-section {
+    background-color: var(--alice-blue);
+    margin: 20px auto 0 auto;
+}

@@ -1,4 +1,4 @@
-import './FormDataHydratorButton';
+import './FormDataHydratorButton.css';
 
 function FormDataHydratorButton({ content }) {
     return (
