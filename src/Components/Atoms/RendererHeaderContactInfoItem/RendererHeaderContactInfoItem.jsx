@@ -1,11 +1,15 @@
+import './RendererHeaderContactInfoItem.css';
 
-function RendererHeaderContactInfoItem() {
+function RendererHeaderContactInfoItem({ info, icon}) {
     return (
         <>
-            <p>icon</p>
-            <span>info</span>
+            <div className="renderer-header-contact-info-item">
+                <p>{icon}</p>
+                <span>{info}</span>
+            </div>
         </>
     );
 }
 
+RendererHeaderContactInfoItem.propTypes;
 export default RendererHeaderContactInfoItem;

@@ -1,8 +1,15 @@
+import RendererBodySection from "../RendererBodySection/RendererBodySection";
 
 function RendererBody() {
     return (
         <>
-            <div>Renderer Body</div>
+            <div className="renderer-body-education">
+                <RendererBodySection />
+            </div>
+            
+            <div className="renderer-body-experience">
+                <RendererBodySection />
+            </div>
         </>
     );
 }

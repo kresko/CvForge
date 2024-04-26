@@ -1,3 +1,4 @@
+import './RendererHeader.css';
 import RendererHeaderContactInfoItem from "../../Atoms/RendererHeaderContactInfoItem/RendererHeaderContactInfoItem";
 
 function RendererHeader() {
@@ -7,9 +8,9 @@ function RendererHeader() {
                 <h1 className="renderer-header-label">Edo Kreš</h1>
 
                 <div className="renderer-header-contact-info">
-                    <RendererHeaderContactInfoItem />
-                    <RendererHeaderContactInfoItem />
-                    <RendererHeaderContactInfoItem />
+                    <RendererHeaderContactInfoItem icon={'icon'} info={'edo.kres@gmail.com'}/>
+                    <RendererHeaderContactInfoItem icon={'icon'} info={'+38599999999'}/>
+                    <RendererHeaderContactInfoItem icon={'icon'} info={'Zagreb'}/>
                 </div>
             </div>
         </>
