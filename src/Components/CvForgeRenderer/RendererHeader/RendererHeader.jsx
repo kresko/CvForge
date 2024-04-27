@@ -1,5 +1,5 @@
 import './RendererHeader.css';
-import RendererHeaderContactInfoItem from "../../Atoms/RendererHeaderContactInfoItem/RendererHeaderContactInfoItem";
+import RendererHeaderContactInfoItem from "../RendererHeaderContactInfoItem/RendererHeaderContactInfoItem";
 
 function RendererHeader() {
     return (

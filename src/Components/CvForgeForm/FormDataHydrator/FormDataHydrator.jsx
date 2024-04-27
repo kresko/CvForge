@@ -1,4 +1,4 @@
-import FormDataHydratorButton from "../../Atoms/FormDataHydratorButton/FormDataHydratorButton";
+import FormDataHydratorButton from "../FormDataHydratorButton/FormDataHydratorButton";
 
 function FormDataHydrator() {
     return (

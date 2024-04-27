@@ -1,5 +1,5 @@
 import './FormConfigurator.css';
-import FormConfiguratorButton from '../../Atoms/FormConfiguratorButton/FormConfiguratorButton';
+import FormConfiguratorButton from '../FormConfiguratorButton/FormConfiguratorButton';
 
 function FormConfigurator() {
     return (

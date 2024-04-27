@@ -1,4 +1,16 @@
- /*---------------- CvForgeForm -------------------*/
+/*---------------- CvForgeForm -------------------*/
+.cv-forge-form {
+    display: inherit;
+    width: 50%;
+    background-color: #666;
+    color: #fff;
+}
 
+/*-------------- CvForgeRenderer -----------------*/
 
- /*-------------- CvForgeRenderer -----------------*/
+.cv-forge-renderer {
+    width: 50%;
+
+    background-color: orange;
+    color: #fff;
+}
