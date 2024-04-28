@@ -1,10 +1,10 @@
 
-function FormDataControllerInput({ label, placeholder }) {
+function FormDataControllerInput({ label, placeholder, onChange }) {
     return(
         <div>
             <h2>{ label }</h2>
 
-            <input type="text" placeholder={placeholder} />
+            <input value={placeholder} onChange={onChange}/>
         </div>
     );
 }

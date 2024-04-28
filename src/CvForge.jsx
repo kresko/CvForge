@@ -11,7 +11,8 @@ function CvForge() {
   const [personalInfo, setPersonalInfo] = useState(defaultDataset.personalInfo);
 
   function onChangePersonalInfo(e) {
-
+    const { key } = e.target.dataset;
+    setPersonalInfo({ ...personalInfo, [key]: e.target.value });
   }
 
   return (
@@ -26,7 +27,7 @@ function CvForge() {
       </div>
 
       <div className="cv-forge-renderer">
-        <RendererHeader />
+        <RendererHeader fullName={personalInfo.fullName} email={personalInfo.email} phone={personalInfo.phoneNumber} address={personalInfo.address}/>
         <RendererBody />
       </div>
     </>

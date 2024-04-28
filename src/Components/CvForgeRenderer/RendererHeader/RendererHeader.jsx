@@ -1,20 +1,21 @@
 import './RendererHeader.css';
 import RendererHeaderContactInfoItem from "../RendererHeaderContactInfoItem/RendererHeaderContactInfoItem";
 
-function RendererHeader() {
+function RendererHeader({ fullName, email, phone, address}) {
     return (
         <>
             <div className="renderer-header">
-                <h1 className="renderer-header-label">Edo Kreš</h1>
+                <h1 className="renderer-header-label">{ fullName }</h1>
 
                 <div className="renderer-header-contact-info">
-                    <RendererHeaderContactInfoItem icon={'icon'} info={'edo.kres@gmail.com'}/>
-                    <RendererHeaderContactInfoItem icon={'icon'} info={'+38599999999'}/>
-                    <RendererHeaderContactInfoItem icon={'icon'} info={'Zagreb'}/>
+                    <RendererHeaderContactInfoItem icon={'icon'} info={email}/>
+                    <RendererHeaderContactInfoItem icon={'icon'} info={phone}/>
+                    <RendererHeaderContactInfoItem icon={'icon'} info={address}/>
                 </div>
             </div>
         </>
     );
 }
 
+RendererHeader.propTypes;
 export default RendererHeader;
