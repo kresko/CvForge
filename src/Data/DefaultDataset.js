@@ -4,6 +4,14 @@ const defaultDataset = {
       email: "edo.kres@gmail.com",
       phoneNumber: "+385 99 999 999",
       address: "Zagreb, Croatia",
+    },
+
+    education: {
+      
+    },
+
+    experience: {
+
     }
 }
 
