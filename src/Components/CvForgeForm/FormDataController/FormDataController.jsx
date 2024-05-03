@@ -7,12 +7,12 @@ function FormDataController({ onChange, fullName, email, phone, address }) {
         <>
             <div className='form-data-controller'>
                 <div className="personal-details">
-                <h1>Personal details</h1>
+                <h2>Personal details</h2>
 
                     <FormDataControllerInput label={'Full name'} placeholder={fullName} onChange={onChange} dataKey="fullName"/>
-                    <FormDataControllerInput label={'Email'} placeholder={email} onChange={onChange} dataKey="email"/>
-                    <FormDataControllerInput label={'Phone number'} placeholder={phone} onChange={onChange} dataKey="phoneNumber"/>
-                    <FormDataControllerInput label={'Address'} placeholder={address} onChange={onChange} dataKey="address"/>
+                    <FormDataControllerInput label={'Email'} placeholder={email} onChange={onChange} dataKey="email" recommendedLabel={'recommended'}/>
+                    <FormDataControllerInput label={'Phone number'} placeholder={phone} onChange={onChange} dataKey="phoneNumber" recommendedLabel={'recommended'}/>
+                    <FormDataControllerInput label={'Address'} placeholder={address} onChange={onChange} dataKey="address" recommendedLabel={'recommended'}/>
                 </div>
 
                 <div className='education-section'>

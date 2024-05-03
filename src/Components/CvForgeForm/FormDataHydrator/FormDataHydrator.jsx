@@ -1,3 +1,5 @@
+import './FormDataHydrator.css'
+import { FaTrash } from "react-icons/fa";
 import FormDataHydratorButton from "../FormDataHydratorButton/FormDataHydratorButton";
 
 function FormDataHydrator() {
@@ -5,7 +7,7 @@ function FormDataHydrator() {
         <>
             <div className="form-data-hydrator">
                 <div className="form-data-hydrator-button-container">
-                    <FormDataHydratorButton content={ 'clear resume' }/>
+                    <FormDataHydratorButton content={ 'Clear resume' } classname={'red'} icon={<FaTrash />}/>
                     <FormDataHydratorButton content={ 'Load example' }/>
                 </div>
             </div>

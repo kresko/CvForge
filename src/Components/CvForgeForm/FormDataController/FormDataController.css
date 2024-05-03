@@ -1,17 +1,32 @@
 :root {
-    --alice-blue: #f0f8ff;
+    --white: #fff;
+    --black: #000;
+    --default-padding: 25px 20px;
+    --default-border-radius: 12px;
 }
 
 .personal-details {
-    background-color: var(--alice-blue);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    padding: var(--default-padding);
+    border-radius: var(--default-border-radius);
+}
+
+.personal-details h2 {
+    color: var(--black);
 }
 
 .education-section {
-    background-color: var(--alice-blue);
+    background-color: var(--white);
     margin: 20px auto 0 auto;
+    padding: var(--default-padding);
+    border-radius: var(--default-border-radius);
 }
 
 .experience-section {
-    background-color: var(--alice-blue);
+    background-color: var(--white);
     margin: 20px auto 0 auto;
+    padding: var(--default-padding);
+    border-radius: var(--default-border-radius);
 }

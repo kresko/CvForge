@@ -1,0 +1,36 @@
+:root {
+    --black: #000;
+    --default-input-background-color: #f3f4f6;
+    --default-margin: 20px 0 10px 0;
+    --default-label-color: #9ca3af;
+}
+
+.form-data-controller-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-data-controller-input input {
+    padding: 12px 10px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: var(--default-input-background-color);
+}
+
+.form-data-controller-input .label-container {
+    display: inherit;
+    align-items: baseline;
+}
+
+.form-data-controller-input .label-container h3 {
+    color: var(--black);
+    margin: var(--default-margin);
+}
+
+.form-data-controller-input .label-container span {
+    color: var(--default-label-color);
+    margin: var(--default-margin);
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}

@@ -1,18 +1,18 @@
 import './FormDataControllerDropdownSection.css';
+import { useState } from 'react';
 import FormDataControllerDropdownItem from "../FormDataControllerDropdownItem/FormDataControllerDropdownItem";
 
 function FormDataControllerDropdownSection({  label, itemLabel }) {
-    let isDropDownFormHidden = true;
-
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    
     function handleIsDropDownFormHidden() {
-        isDropDownFormHidden = isDropDownFormHidden ? false : true;
-        console.log(isDropDownFormHidden);
+        setIsDropdownOpen((isDropdownOpen) => !isDropdownOpen);
     }
 
     return (
         <>
             <button className={`form-data-controller-dropdown-section`} onClick={handleIsDropDownFormHidden}>{label}</button>
-            <div className={`form-data-controller-dropdown-section ${isDropDownFormHidden ? 'is-hidden' : ''}`}>
+            <div className={`form-data-controller-dropdown-section ${isDropdownOpen ? 'is-hidden' : ''}`}>
                 <div className="form-data-controller-dropdown-section-item-collection">
                     <FormDataControllerDropdownItem label={itemLabel} icon={'icon'}/>
                     <FormDataControllerDropdownItem label={itemLabel} icon={'icon'}/>

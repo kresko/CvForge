@@ -1,0 +1,13 @@
+.renderer-body-section {
+    display: flex;
+}
+
+.renderer-body-section .date-location {
+    width: 25%;
+    margin: 10px 20px;
+}
+
+.renderer-body-section .institution {
+    width: 75%;
+    margin: 10px 20px;
+}
