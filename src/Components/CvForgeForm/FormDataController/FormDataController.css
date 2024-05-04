@@ -1,15 +1,18 @@
 :root {
     --white: #fff;
     --black: #000;
-    --default-padding: 25px 20px;
+    --default-padding-personal-details: 25px 20px;
+    --default-padding: 10px 20px;
     --default-border-radius: 12px;
+    --default-margin: 20px auto 0 auto;
 }
 
 .personal-details {
     display: flex;
     flex-direction: column;
+    margin: var(--default-margin);
     background-color: var(--white);
-    padding: var(--default-padding);
+    padding: var(--default-padding-personal-details);
     border-radius: var(--default-border-radius);
 }
 
@@ -19,14 +22,13 @@
 
 .education-section {
     background-color: var(--white);
-    margin: 20px auto 0 auto;
-    padding: var(--default-padding);
+    margin: var(--default-margin);
     border-radius: var(--default-border-radius);
 }
 
 .experience-section {
     background-color: var(--white);
-    margin: 20px auto 0 auto;
-    padding: var(--default-padding);
+    margin: var(--default-margin);
+    margin-bottom: 0;
     border-radius: var(--default-border-radius);
 }

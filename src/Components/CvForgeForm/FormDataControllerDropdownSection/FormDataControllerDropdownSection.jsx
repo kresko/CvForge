@@ -1,9 +1,11 @@
 import './FormDataControllerDropdownSection.css';
 import { useState } from 'react';
 import FormDataControllerDropdownItem from "../FormDataControllerDropdownItem/FormDataControllerDropdownItem";
+import { FaChevronUp } from "react-icons/fa";
 
-function FormDataControllerDropdownSection({  label, itemLabel }) {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+function FormDataControllerDropdownSection({  label, itemLabel, icon='' }) {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(true);
     
     function handleIsDropDownFormHidden() {
         setIsDropdownOpen((isDropdownOpen) => !isDropdownOpen);
@@ -11,7 +13,10 @@ function FormDataControllerDropdownSection({  label, itemLabel }) {
 
     return (
         <>
-            <button className={`form-data-controller-dropdown-section`} onClick={handleIsDropDownFormHidden}>{label}</button>
+            <button className={`form-data-controller-dropdown-section-button`} onClick={handleIsDropDownFormHidden}>
+                <span className='custom-icon'>{icon}<h2>{label}</h2></span>
+                <span className='chevron'><FaChevronUp/></span>
+            </button>
             <div className={`form-data-controller-dropdown-section ${isDropdownOpen ? 'is-hidden' : ''}`}>
                 <div className="form-data-controller-dropdown-section-item-collection">
                     <FormDataControllerDropdownItem label={itemLabel} icon={'icon'}/>

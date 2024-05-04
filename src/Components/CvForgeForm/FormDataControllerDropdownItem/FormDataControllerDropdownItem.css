@@ -1,0 +1,10 @@
+.form-data-controller-dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    padding: 20px;
+    border: inherit;
+    border-top: 3px solid #f3f4f6;
+    background-color: inherit;
+}

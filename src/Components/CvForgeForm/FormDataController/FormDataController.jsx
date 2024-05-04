@@ -1,6 +1,10 @@
 import './FormDataController.css';
 import FormDataControllerInput from "../FormDataControllerInput/FormDataControllerInput";
 import FormDataControllerDropdownSection from '../FormDataControllerDropdownSection/FormDataControllerDropdownSection';
+import { FaGraduationCap } from "react-icons/fa";
+import { FaBriefcase } from "react-icons/fa";
+
+
 
 function FormDataController({ onChange, fullName, email, phone, address }) {
     return (
@@ -16,11 +20,11 @@ function FormDataController({ onChange, fullName, email, phone, address }) {
                 </div>
 
                 <div className='education-section'>
-                    <FormDataControllerDropdownSection label={'Education'} itemLabel={'London City University'}/>
+                    <FormDataControllerDropdownSection label={'Education'} itemLabel={'London City University'} icon={<FaGraduationCap/>}/>
                 </div>
 
                 <div className='experience-section'>
-                    <FormDataControllerDropdownSection label={'Experience'} itemLabel={'Hidden University'}/>
+                    <FormDataControllerDropdownSection label={'Experience'} itemLabel={'Hidden University'} icon={<FaBriefcase/>}/>
                 </div>
             </div>
 

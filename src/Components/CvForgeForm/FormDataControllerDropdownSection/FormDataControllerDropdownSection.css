@@ -7,3 +7,37 @@
 .is-hidden {
     display: none;
 }
+
+.form-data-controller-dropdown-section-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 20px;
+    border: inherit;
+    border-radius: inherit;
+    background-color: inherit;
+}
+
+.form-data-controller-dropdown-section-button span {
+    display: inherit;
+}
+
+.form-data-controller-dropdown-section-button svg {
+    width: 25px;
+    height: 25px;
+}
+
+.form-data-controller-dropdown-section-button .custom-icon {
+    align-items: center;
+}
+
+.form-data-controller-dropdown-section-button .custom-icon svg {
+    margin-right: 10px;
+}
+
+.form-data-controller-dropdown-section-button .chevron svg {
+    transform: rotate(180deg);
+    width: 15px;
+    height: 15px;
+}

@@ -1,8 +1,9 @@
+import './FormDataControllerDropdownItem.css';
 
 function FormDataControllerDropdownItem({ label, icon}) {
     return (
         <>
-            <button>
+            <button className='form-data-controller-dropdown-item'>
                 <p>{label}</p>
                 <i>{icon}</i>
             </button>
