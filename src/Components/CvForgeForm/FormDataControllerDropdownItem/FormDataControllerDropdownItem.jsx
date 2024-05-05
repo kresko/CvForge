@@ -4,7 +4,7 @@ function FormDataControllerDropdownItem({ label, icon}) {
     return (
         <>
             <button className='form-data-controller-dropdown-item'>
-                <p>{label}</p>
+                <h3><strong>{label}</strong></h3>
                 <i>{icon}</i>
             </button>
         </>

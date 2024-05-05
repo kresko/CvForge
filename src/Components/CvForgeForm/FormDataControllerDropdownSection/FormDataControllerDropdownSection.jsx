@@ -2,10 +2,14 @@ import './FormDataControllerDropdownSection.css';
 import { useState } from 'react';
 import FormDataControllerDropdownItem from "../FormDataControllerDropdownItem/FormDataControllerDropdownItem";
 import { FaChevronUp } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
+import defaultDataset from "../../../Data/DefaultDataset";
 
 
 function FormDataControllerDropdownSection({  label, itemLabel, icon='' }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(true);
+    const educationArray = [defaultDataset.sections.education.bachelorDegree.institutionName, defaultDataset.sections.education.mastersDegree.institutionName];
+    const professionalExperienceArray = [defaultDataset.sections.experience.theoreticalPhysicistJob.institutionName, defaultDataset.sections.experience.experimentalPhysicistJob.institutionName];
     
     function handleIsDropDownFormHidden() {
         setIsDropdownOpen((isDropdownOpen) => !isDropdownOpen);
@@ -22,7 +26,9 @@ function FormDataControllerDropdownSection({  label, itemLabel, icon='' }) {
                     <FormDataControllerDropdownItem label={itemLabel} icon={'icon'}/>
                     <FormDataControllerDropdownItem label={itemLabel} icon={'icon'}/>
                 </div>
-                <button>Create form</button>
+                <div className='form-data-controller-dropdown-section-add-button-container'>
+                    <button className='form-data-controller-dropdown-section-add-button'><FaPlus /><strong>Education</strong></button>
+                </div>
             </div>
         </>
     );

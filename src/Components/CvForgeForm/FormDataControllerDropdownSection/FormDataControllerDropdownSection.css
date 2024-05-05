@@ -41,3 +41,22 @@
     width: 15px;
     height: 15px;
 }
+
+.form-data-controller-dropdown-section-add-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 18px 0;
+    border-top: 3px solid #f3f4f6;
+}
+
+.form-data-controller-dropdown-section-add-button {
+    display: inherit;
+    padding: 8px 18px;
+    background-color: #fff;
+    border: 4px solid #f3f4f6;
+    border-radius: 69420px;
+}
+
+.form-data-controller-dropdown-section-add-button svg {
+    margin-right: 5px;
+}
