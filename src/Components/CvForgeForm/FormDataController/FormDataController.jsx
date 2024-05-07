@@ -3,10 +3,12 @@ import FormDataControllerInput from "../FormDataControllerInput/FormDataControll
 import FormDataControllerDropdownSection from '../FormDataControllerDropdownSection/FormDataControllerDropdownSection';
 import { FaGraduationCap } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa";
-
-
+import defaultDataset from "../../../Data/DefaultDataset";
 
 function FormDataController({ onChange, fullName, email, phone, address }) {
+    const educationArray = [defaultDataset.sections.education.bachelorDegree.institutionName, defaultDataset.sections.education.mastersDegree.institutionName];
+    const professionalExperienceArray = [defaultDataset.sections.experience.theoreticalPhysicistJob.institutionName, defaultDataset.sections.experience.experimentalPhysicistJob.institutionName];
+
     return (
         <>
             <div className='form-data-controller'>
@@ -20,11 +22,11 @@ function FormDataController({ onChange, fullName, email, phone, address }) {
                 </div>
 
                 <div className='education-section'>
-                    <FormDataControllerDropdownSection label={'Education'} itemLabel={'London City University'} icon={<FaGraduationCap/>}/>
+                    <FormDataControllerDropdownSection label={'Education'} itemLabel={educationArray} icon={<FaGraduationCap/>}/>
                 </div>
 
                 <div className='experience-section'>
-                    <FormDataControllerDropdownSection label={'Experience'} itemLabel={'Hidden University'} icon={<FaBriefcase/>}/>
+                    <FormDataControllerDropdownSection label={'Experience'} itemLabel={professionalExperienceArray} icon={<FaBriefcase/>}/>
                 </div>
             </div>
 
