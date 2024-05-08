@@ -1,7 +1,7 @@
 import './RendererHeader.css';
 import RendererHeaderContactInfoItem from "../RendererHeaderContactInfoItem/RendererHeaderContactInfoItem";
 
-function RendererHeader({ fullName, email, phone, address}) {
+function RendererHeader({ fullName, email, phone, address }) {
     return (
         <>
             <div className="renderer-header">

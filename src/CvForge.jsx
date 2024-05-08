@@ -9,10 +9,15 @@ import { useState } from 'react';
 
 function CvForge() {
   const [personalInfo, setPersonalInfo] = useState(defaultDataset.personalInfo);
+  const [isResumeInfoHidden, setIsResumeInfoHidden] = useState(null);
 
   function onChangePersonalInfo(e) {
     const { key } = e.target.dataset;
-    setPersonalInfo({ ...personalInfo, [key]: e.target.value });
+    setPersonalInfo({ ...personalInfo, [key]: e.target.value })
+  }
+
+  function hideResumeInformation(id) {
+    setIsResumeInfoHidden(id);    
   }
 
   return (
@@ -22,13 +27,23 @@ function CvForge() {
         
         <div className='form-toggler'>
           <FormDataHydrator />
-          <FormDataController onChange={onChangePersonalInfo} fullName={personalInfo.fullName} email={personalInfo.email} phone={personalInfo.phoneNumber} address={personalInfo.address}/>
+          <FormDataController onChange={onChangePersonalInfo} 
+              fullName={personalInfo.fullName} 
+              email={personalInfo.email} 
+              phone={personalInfo.phoneNumber} 
+              address={personalInfo.address}
+              resumeInfoClickHandler={hideResumeInformation}
+              resumeInfo={isResumeInfoHidden}/>
         </div>
       </div>
 
       <div className="cv-forge-renderer">
-        <RendererHeader fullName={personalInfo.fullName} email={personalInfo.email} phone={personalInfo.phoneNumber} address={personalInfo.address}/>
-        <RendererBody />
+        <RendererHeader fullName={personalInfo.fullName} 
+            email={personalInfo.email} 
+            phone={personalInfo.phoneNumber} 
+            address={personalInfo.address}/>
+
+        <RendererBody resumeInfo={isResumeInfoHidden}/>
       </div>
     </>
   )

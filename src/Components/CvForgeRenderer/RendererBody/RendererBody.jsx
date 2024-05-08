@@ -1,7 +1,7 @@
 import defaultDataset from "../../../Data/DefaultDataset";
 import RendererBodySection from "../RendererBodySection/RendererBodySection";
 
-function RendererBody() {
+function RendererBody({ resumeInfo }) {
     return (
         <>
             <div className="renderer-body-education">
@@ -13,6 +13,7 @@ function RendererBody() {
                     location={defaultDataset.sections.education.bachelorDegree.location}
                     insitutionName={defaultDataset.sections.education.bachelorDegree.institutionName}
                     degree={defaultDataset.sections.education.bachelorDegree.degree}
+                    resumeInfo={resumeInfo}
                 />
 
                 <RendererBodySection 
@@ -21,6 +22,7 @@ function RendererBody() {
                     location={defaultDataset.sections.education.mastersDegree.location}
                     insitutionName={defaultDataset.sections.education.mastersDegree.institutionName}
                     degree={defaultDataset.sections.education.mastersDegree.degree}
+                    resumeInfo={resumeInfo}
                 />
             </div>
             
@@ -34,6 +36,7 @@ function RendererBody() {
                     insitutionName={defaultDataset.sections.experience.theoreticalPhysicistJob.institutionName}
                     degree={defaultDataset.sections.experience.theoreticalPhysicistJob.degree}
                     description={defaultDataset.sections.experience.theoreticalPhysicistJob.jobDescription}
+                    resumeInfo={resumeInfo}
                 />
 
                 <RendererBodySection 
@@ -43,10 +46,12 @@ function RendererBody() {
                     insitutionName={defaultDataset.sections.experience.experimentalPhysicistJob.institutionName}
                     degree={defaultDataset.sections.experience.experimentalPhysicistJob.degree}
                     description={defaultDataset.sections.experience.experimentalPhysicistJob.jobDescription}
+                    resumeInfo={resumeInfo}
                 />
             </div>
         </>
     );
 }
 
+RendererBody.propTypes;
 export default RendererBody;

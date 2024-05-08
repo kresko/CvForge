@@ -5,9 +5,12 @@ import { FaGraduationCap } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa";
 import defaultDataset from "../../../Data/DefaultDataset";
 
-function FormDataController({ onChange, fullName, email, phone, address }) {
+
+function FormDataController({ onChange, fullName, email, phone, address, resumeInfoClickHandler, resumeInfo }) {
     const educationArray = [defaultDataset.sections.education.bachelorDegree.institutionName, defaultDataset.sections.education.mastersDegree.institutionName];
     const professionalExperienceArray = [defaultDataset.sections.experience.theoreticalPhysicistJob.institutionName, defaultDataset.sections.experience.experimentalPhysicistJob.institutionName];
+    const educationIds = [defaultDataset.sections.education.bachelorDegree.id, defaultDataset.sections.education.mastersDegree.id];
+    const professionalExperienceIds = [defaultDataset.sections.experience.theoreticalPhysicistJob.id, defaultDataset.sections.experience.experimentalPhysicistJob.id];
 
     return (
         <>
@@ -22,11 +25,11 @@ function FormDataController({ onChange, fullName, email, phone, address }) {
                 </div>
 
                 <div className='education-section'>
-                    <FormDataControllerDropdownSection label={'Education'} itemLabel={educationArray} icon={<FaGraduationCap/>}/>
+                    <FormDataControllerDropdownSection label={'Education'} itemLabel={educationArray} icon={<FaGraduationCap/>} resumeInfoClickHandler={resumeInfoClickHandler} resumeInfo={resumeInfo} ids={educationIds} />
                 </div>
 
                 <div className='experience-section'>
-                    <FormDataControllerDropdownSection label={'Experience'} itemLabel={professionalExperienceArray} icon={<FaBriefcase/>}/>
+                    <FormDataControllerDropdownSection label={'Experience'} itemLabel={professionalExperienceArray} icon={<FaBriefcase/>} resumeInfoClickHandler={resumeInfoClickHandler} resumeInfo={resumeInfo} ids={professionalExperienceIds} />
                 </div>
             </div>
 

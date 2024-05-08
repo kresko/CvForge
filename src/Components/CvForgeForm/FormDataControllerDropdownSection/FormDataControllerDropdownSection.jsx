@@ -4,7 +4,7 @@ import FormDataControllerDropdownItem from "../FormDataControllerDropdownItem/Fo
 import { FaChevronUp } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 
-function FormDataControllerDropdownSection({  label, itemLabel, icon='' }) {
+function FormDataControllerDropdownSection({  label, itemLabel, icon='', resumeInfoClickHandler, resumeInfo, ids }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(true);
     
     function handleIsDropDownFormHidden() {
@@ -19,8 +19,8 @@ function FormDataControllerDropdownSection({  label, itemLabel, icon='' }) {
             </button>
             <div className={`form-data-controller-dropdown-section ${isDropdownOpen ? 'is-hidden' : ''}`}>
                 <div className="form-data-controller-dropdown-section-item-collection">
-                    <FormDataControllerDropdownItem label={itemLabel[0]} />
-                    <FormDataControllerDropdownItem label={itemLabel[1]} />
+                    <FormDataControllerDropdownItem label={itemLabel[0]} resumeInfoClickHandler={resumeInfoClickHandler} resumeInfo={resumeInfo} id={ids[0]}/>
+                    <FormDataControllerDropdownItem label={itemLabel[1]} resumeInfoClickHandler={resumeInfoClickHandler} resumeInfo={resumeInfo} id={ids[1]}/>
                 </div>
                 <div className='form-data-controller-dropdown-section-add-button-container'>
                     <button className='form-data-controller-dropdown-section-add-button'><FaPlus /><strong>Education</strong></button>

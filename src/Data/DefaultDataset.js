@@ -14,14 +14,16 @@ const defaultDataset = {
           institutionName: 'Tebeth University',
           startDate: '09/2015',
           endDate: '09/2018',
-          location: 'Tebeth'
+          location: 'Tebeth',
+          id: 'bachelorDegreeEducation'
         },
         mastersDegree: {
           degree: "Master's degree in applied physics",
           institutionName: 'Utgaard University',
           startDate: '10/2018',
           endDate: '10/2024',
-          location: 'Utgaard'
+          location: 'Utgaard',
+          id: 'mastersDegreeEducation'
         }
       },
   
@@ -33,7 +35,8 @@ const defaultDataset = {
           jobDescription: 'Designing, building, and conducting experiments to test hypotheses, validate theories, and discover new phenomena.',
           startDate: '09/2015',
           endDate: '10/2018',
-          location: 'Tebeth'
+          location: 'Tebeth',
+          id: 'theoreticalPhysicistJobExperience'
         },
         experimentalPhysicistJob: {
           institutionName: 'Black Mesa Labs',
@@ -41,7 +44,8 @@ const defaultDataset = {
           jobDescription: 'Designing, building, and conducting experiments to test hypotheses, validate theories, and discover new phenomena.',
           startDate: '10/2018',
           endDate: 'present',
-          location: 'Utgaard'
+          location: 'Utgaard',
+          id: 'experimentalPhysicistJobExperience'
         }
       }
     }
