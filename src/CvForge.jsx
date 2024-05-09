@@ -9,22 +9,37 @@ import { useState } from 'react';
 
 function CvForge() {
   const [personalInfo, setPersonalInfo] = useState(defaultDataset.personalInfo);
-  const [isResumeInfoHidden, setIsResumeInfoHidden] = useState(null);
+  const [isbachelorDegreeEducationInfoHidden, setIsbachelorDegreeEducationInfoHidden] = useState(false);
+  const [isMastersDegreeEducationInfoHidden, setIsMastersDegreeEducationInfoHidden] = useState(false);
+  const [isTheoreticalPhysicistJobExperienceInfoHidden, setIsTheoreticalPhysicistJobExperienceInfoHidden] = useState(false);
+  const [isExperimentalPhysicistJobExperienceInfoHidden, setIsExperimentalPhysicistJobExperienceInfoHidden] = useState(false);
 
   function onChangePersonalInfo(e) {
     const { key } = e.target.dataset;
     setPersonalInfo({ ...personalInfo, [key]: e.target.value })
   }
 
-  function hideResumeInformation(id) {
-    setIsResumeInfoHidden(id);    
+  function hideBachelorDegreeEducationInfo() {
+    setIsbachelorDegreeEducationInfoHidden((isbachelorDegreeEducationInfoHidden) => !isbachelorDegreeEducationInfoHidden);
+  }
+
+  function hideMastersDegreeEducationInfo() {
+    setIsMastersDegreeEducationInfoHidden((isMastersDegreeEducationInfoHidden) => !isMastersDegreeEducationInfoHidden);
+  }
+
+  function hideTheoreticalPhysicistJobExperienceInfo() {
+    setIsTheoreticalPhysicistJobExperienceInfoHidden((isTheoreticalPhysicistJobExperienceInfoHidden) => !isTheoreticalPhysicistJobExperienceInfoHidden);
+  }
+
+  function hideExperimentalPhysicistJobExperienceInfo() {
+    setIsExperimentalPhysicistJobExperienceInfoHidden((isExperimentalPhysicistJobExperienceInfoHidden) => !isExperimentalPhysicistJobExperienceInfoHidden);
   }
 
   return (
     <>
       <div className="cv-forge-form">
         <FormConfigurator />
-        
+
         <div className='form-toggler'>
           <FormDataHydrator />
           <FormDataController onChange={onChangePersonalInfo} 
@@ -32,8 +47,15 @@ function CvForge() {
               email={personalInfo.email} 
               phone={personalInfo.phoneNumber} 
               address={personalInfo.address}
-              resumeInfoClickHandler={hideResumeInformation}
-              resumeInfo={isResumeInfoHidden}/>
+              bachelorDegreeEducationInfo={isbachelorDegreeEducationInfoHidden}
+              bachelorDegreeEducationInfoClickHandler={hideBachelorDegreeEducationInfo}
+              mastersDegreeEducationInfo={isMastersDegreeEducationInfoHidden}
+              mastersDegreeEducationInfoClickHandler={hideMastersDegreeEducationInfo}
+              theoreticalPhysicistJobExperienceInfo={isTheoreticalPhysicistJobExperienceInfoHidden}
+              theoreticalPhysicistJobExperienceInfoClickHandler={hideTheoreticalPhysicistJobExperienceInfo}
+              experimentalPhysicistJobExperienceInfo={isExperimentalPhysicistJobExperienceInfoHidden}
+              experimentalPhysicistJobExperienceInfoClickHandler={hideExperimentalPhysicistJobExperienceInfo}
+              />
         </div>
       </div>
 
@@ -43,7 +65,12 @@ function CvForge() {
             phone={personalInfo.phoneNumber} 
             address={personalInfo.address}/>
 
-        <RendererBody resumeInfo={isResumeInfoHidden}/>
+        <RendererBody 
+          bachelorDegreeEducationInfo={isbachelorDegreeEducationInfoHidden}
+          mastersDegreeEducationInfo={isMastersDegreeEducationInfoHidden}
+          theoreticalPhysicistJobExperienceInfo={isTheoreticalPhysicistJobExperienceInfoHidden}
+          experimentalPhysicistJobExperienceInfo={isExperimentalPhysicistJobExperienceInfoHidden}
+          />
       </div>
     </>
   )

@@ -7,6 +7,13 @@ const defaultDataset = {
     },
 
     sections: {
+      ids: {
+        bachelorDegreeEducation: true,
+        mastersDegreeEducation: true,
+        theoreticalPhysicistJobExperience: true,
+        experimentalPhysicistJobExperience: true
+      },
+
       education: {
         label: 'Education',
         bachelorDegree: {
@@ -14,16 +21,14 @@ const defaultDataset = {
           institutionName: 'Tebeth University',
           startDate: '09/2015',
           endDate: '09/2018',
-          location: 'Tebeth',
-          id: 'bachelorDegreeEducation'
+          location: 'Tebeth'
         },
         mastersDegree: {
           degree: "Master's degree in applied physics",
           institutionName: 'Utgaard University',
           startDate: '10/2018',
           endDate: '10/2024',
-          location: 'Utgaard',
-          id: 'mastersDegreeEducation'
+          location: 'Utgaard'
         }
       },
   
@@ -36,7 +41,6 @@ const defaultDataset = {
           startDate: '09/2015',
           endDate: '10/2018',
           location: 'Tebeth',
-          id: 'theoreticalPhysicistJobExperience'
         },
         experimentalPhysicistJob: {
           institutionName: 'Black Mesa Labs',
@@ -45,7 +49,6 @@ const defaultDataset = {
           startDate: '10/2018',
           endDate: 'present',
           location: 'Utgaard',
-          id: 'experimentalPhysicistJobExperience'
         }
       }
     }

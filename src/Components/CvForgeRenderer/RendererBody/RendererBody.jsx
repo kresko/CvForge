@@ -1,7 +1,7 @@
 import defaultDataset from "../../../Data/DefaultDataset";
 import RendererBodySection from "../RendererBodySection/RendererBodySection";
 
-function RendererBody({ resumeInfo }) {
+function RendererBody({ bachelorDegreeEducationInfo, mastersDegreeEducationInfo, theoreticalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfo }) {
     return (
         <>
             <div className="renderer-body-education">
@@ -13,7 +13,7 @@ function RendererBody({ resumeInfo }) {
                     location={defaultDataset.sections.education.bachelorDegree.location}
                     insitutionName={defaultDataset.sections.education.bachelorDegree.institutionName}
                     degree={defaultDataset.sections.education.bachelorDegree.degree}
-                    resumeInfo={resumeInfo}
+                    resumeInfo={bachelorDegreeEducationInfo}
                 />
 
                 <RendererBodySection 
@@ -22,7 +22,7 @@ function RendererBody({ resumeInfo }) {
                     location={defaultDataset.sections.education.mastersDegree.location}
                     insitutionName={defaultDataset.sections.education.mastersDegree.institutionName}
                     degree={defaultDataset.sections.education.mastersDegree.degree}
-                    resumeInfo={resumeInfo}
+                    resumeInfo={mastersDegreeEducationInfo}
                 />
             </div>
             
@@ -36,7 +36,7 @@ function RendererBody({ resumeInfo }) {
                     insitutionName={defaultDataset.sections.experience.theoreticalPhysicistJob.institutionName}
                     degree={defaultDataset.sections.experience.theoreticalPhysicistJob.degree}
                     description={defaultDataset.sections.experience.theoreticalPhysicistJob.jobDescription}
-                    resumeInfo={resumeInfo}
+                    resumeInfo={theoreticalPhysicistJobExperienceInfo}
                 />
 
                 <RendererBodySection 
@@ -46,7 +46,7 @@ function RendererBody({ resumeInfo }) {
                     insitutionName={defaultDataset.sections.experience.experimentalPhysicistJob.institutionName}
                     degree={defaultDataset.sections.experience.experimentalPhysicistJob.degree}
                     description={defaultDataset.sections.experience.experimentalPhysicistJob.jobDescription}
-                    resumeInfo={resumeInfo}
+                    resumeInfo={experimentalPhysicistJobExperienceInfo}
                 />
             </div>
         </>
