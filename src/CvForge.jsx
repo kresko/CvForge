@@ -4,6 +4,7 @@ import RendererHeader from './Components/CvForgeRenderer/RendererHeader/Renderer
 import RendererBody from './Components/CvForgeRenderer/RendererBody/RendererBody';
 import FormDataHydrator from './Components/CvForgeForm/FormDataHydrator/FormDataHydrator';
 import FormDataController from './Components/CvForgeForm/FormDataController/FormDataController';
+import FormCustomizer from './Components/CvForgeForm/FormCustomizer/FormCustomizer';
 import defaultDataset from './Data/DefaultDataset';
 import { useState } from 'react';
 
@@ -13,6 +14,7 @@ function CvForge() {
   const [isMastersDegreeEducationInfoHidden, setIsMastersDegreeEducationInfoHidden] = useState(false);
   const [isTheoreticalPhysicistJobExperienceInfoHidden, setIsTheoreticalPhysicistJobExperienceInfoHidden] = useState(false);
   const [isExperimentalPhysicistJobExperienceInfoHidden, setIsExperimentalPhysicistJobExperienceInfoHidden] = useState(false);
+  const [isFormToggled, setIsFormToggled] = useState(false);
 
   function onChangePersonalInfo(e) {
     const { key } = e.target.dataset;
@@ -38,11 +40,13 @@ function CvForge() {
   return (
     <>
       <div className="cv-forge-form">
-        <FormConfigurator />
+        <FormConfigurator setIsFormToggled={setIsFormToggled}/>
 
         <div className='form-toggler'>
           <FormDataHydrator />
-          <FormDataController onChange={onChangePersonalInfo} 
+
+          {!isFormToggled ? 
+            <FormDataController onChange={onChangePersonalInfo} 
               fullName={personalInfo.fullName} 
               email={personalInfo.email} 
               phone={personalInfo.phoneNumber} 
@@ -55,7 +59,10 @@ function CvForge() {
               theoreticalPhysicistJobExperienceInfoClickHandler={hideTheoreticalPhysicistJobExperienceInfo}
               experimentalPhysicistJobExperienceInfo={isExperimentalPhysicistJobExperienceInfoHidden}
               experimentalPhysicistJobExperienceInfoClickHandler={hideExperimentalPhysicistJobExperienceInfo}
-              />
+            /> :
+            <FormCustomizer />
+          }
+          
         </div>
       </div>
 

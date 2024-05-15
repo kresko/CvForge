@@ -1,4 +1,11 @@
 
 .renderer-header-contact-info-item {
-    display: inherit; 
+    display: inherit;
+    text-align: center; 
+}
+
+.renderer-header-contact-info-item div {
+    display: inherit;
+    align-items: center;
+    margin-right: 5px;
 }

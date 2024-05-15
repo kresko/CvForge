@@ -4,7 +4,7 @@ function RendererHeaderContactInfoItem({ info, icon}) {
     return (
         <>
             <div className="renderer-header-contact-info-item">
-                <p>{icon}</p>
+                <div>{icon}</div>
                 <span>{info}</span>
             </div>
         </>

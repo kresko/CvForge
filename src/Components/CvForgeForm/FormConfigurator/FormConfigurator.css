@@ -1,9 +1,16 @@
 .form-configurator {
     display: inherit;
-    margin: 10px 20px;
+    margin: 0 10px;
+}
+
+.vertical-align {
+    display: inherit;
+    flex-direction: column;
 }
 
 .form-configurator-button-container {
     display: inherit;
-    flex-direction: column;
+    flex-direction: inherit;
+    background-color: #fff;
+    border-radius: 12px;
 }
