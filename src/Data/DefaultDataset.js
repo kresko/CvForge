@@ -51,6 +51,11 @@ const defaultDataset = {
           location: 'Utgaard',
         }
       }
+    },
+
+    forms: {
+      formController: 'formController',
+      formCustomizer: 'formCustomizer'
     }
 }
 

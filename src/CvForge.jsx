@@ -14,7 +14,7 @@ function CvForge() {
   const [isMastersDegreeEducationInfoHidden, setIsMastersDegreeEducationInfoHidden] = useState(false);
   const [isTheoreticalPhysicistJobExperienceInfoHidden, setIsTheoreticalPhysicistJobExperienceInfoHidden] = useState(false);
   const [isExperimentalPhysicistJobExperienceInfoHidden, setIsExperimentalPhysicistJobExperienceInfoHidden] = useState(false);
-  const [isFormToggled, setIsFormToggled] = useState(false);
+  const [isFormToggled, setIsFormToggled] = useState(defaultDataset.forms.formController);
 
   function onChangePersonalInfo(e) {
     const { key } = e.target.dataset;
@@ -37,15 +37,19 @@ function CvForge() {
     setIsExperimentalPhysicistJobExperienceInfoHidden((isExperimentalPhysicistJobExperienceInfoHidden) => !isExperimentalPhysicistJobExperienceInfoHidden);
   }
 
+  function toggleForm(id) {
+    setIsFormToggled(id);
+  }
+
   return (
     <>
       <div className="cv-forge-form">
-        <FormConfigurator setIsFormToggled={setIsFormToggled}/>
+        <FormConfigurator toggleForm={toggleForm}/>
 
         <div className='form-toggler'>
           <FormDataHydrator />
 
-          {!isFormToggled ? 
+          { isFormToggled == defaultDataset.forms.formController && ( 
             <FormDataController onChange={onChangePersonalInfo} 
               fullName={personalInfo.fullName} 
               email={personalInfo.email} 
@@ -59,10 +63,9 @@ function CvForge() {
               theoreticalPhysicistJobExperienceInfoClickHandler={hideTheoreticalPhysicistJobExperienceInfo}
               experimentalPhysicistJobExperienceInfo={isExperimentalPhysicistJobExperienceInfoHidden}
               experimentalPhysicistJobExperienceInfoClickHandler={hideExperimentalPhysicistJobExperienceInfo}
-            /> :
-            <FormCustomizer />
-          }
-          
+            /> )}
+
+          { isFormToggled == defaultDataset.forms.formCustomizer && (<FormCustomizer />)}
         </div>
       </div>
 

@@ -1,17 +1,13 @@
-import { useState } from 'react';
 import './FormConfiguratorButton.css';
 
-function FormConfiguratorButton({ content, icon, setIsFormToggled }) {
-    const [isFormSelected, setIsFormSelected] = useState(true);
-
-    function toggleForm() {
-        setIsFormSelected((isFormSelected) => !isFormSelected);
-        setIsFormToggled(isFormSelected);
+function FormConfiguratorButton({ content, icon, toggleForm, id }) {
+    function test() {
+        toggleForm(id);
     }
 
     return (
         <>
-            <button className={`form-configurator-button classNameAdditional`} onClick={toggleForm}>
+            <button className={`form-configurator-button classNameAdditional`} onClick={test}>
                 <div className='icon-container'>{icon}</div>
                 <p>{content}</p>
             </button>
