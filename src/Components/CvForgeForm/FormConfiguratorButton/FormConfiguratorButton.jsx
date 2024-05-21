@@ -7,7 +7,7 @@ function FormConfiguratorButton({ content, icon, toggleForm, id }) {
 
     return (
         <>
-            <button className={`form-configurator-button classNameAdditional`} onClick={test}>
+            <button className={`form-configurator-button ${id}`} onClick={test}>
                 <div className='icon-container'>{icon}</div>
                 <p>{content}</p>
             </button>

@@ -1,5 +1,7 @@
 .renderer-header {
     padding: 30px 20px 25px 20px;
+    background-color: #0e374e;
+    color: #fff;
 }
 
 .renderer-header-label {

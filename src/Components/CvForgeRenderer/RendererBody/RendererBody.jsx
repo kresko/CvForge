@@ -1,11 +1,12 @@
 import defaultDataset from "../../../Data/DefaultDataset";
 import RendererBodySection from "../RendererBodySection/RendererBodySection";
+import './RendererBody.css';
 
 function RendererBody({ bachelorDegreeEducationInfo, mastersDegreeEducationInfo, theoreticalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfo }) {
     return (
         <>
             <div className="renderer-body-education">
-                <h2>{defaultDataset.sections.education.label}</h2>
+                <h3>{defaultDataset.sections.education.label}</h3>
 
                 <RendererBodySection 
                     startDate={defaultDataset.sections.education.bachelorDegree.startDate}
@@ -27,7 +28,7 @@ function RendererBody({ bachelorDegreeEducationInfo, mastersDegreeEducationInfo,
             </div>
             
             <div className="renderer-body-experience">
-                <h2>{defaultDataset.sections.experience.label}</h2>
+                <h3>{defaultDataset.sections.experience.label}</h3>
 
                 <RendererBodySection 
                     startDate={defaultDataset.sections.experience.theoreticalPhysicistJob.startDate}

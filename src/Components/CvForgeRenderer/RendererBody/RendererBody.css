@@ -1,0 +1,23 @@
+.renderer-body-education {
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.renderer-body-education h3 {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f3f4f6;
+    color: #0e374e;
+}
+
+.renderer-body-experience {
+    padding: 0 30px;
+    margin-top: 20px;
+}
+
+.renderer-body-experience h3 {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f3f4f6;
+    color: #0e374e;
+}
