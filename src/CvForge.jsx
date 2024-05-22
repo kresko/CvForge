@@ -15,6 +15,7 @@ function CvForge() {
   const [isTheoreticalPhysicistJobExperienceInfoHidden, setIsTheoreticalPhysicistJobExperienceInfoHidden] = useState(false);
   const [isExperimentalPhysicistJobExperienceInfoHidden, setIsExperimentalPhysicistJobExperienceInfoHidden] = useState(false);
   const [isFormToggled, setIsFormToggled] = useState(defaultDataset.forms.formController);
+  const [isDefaultDataUsed, setIsDefaultDataUsed] = useState(true); 
 
   function onChangePersonalInfo(e) {
     const { key } = e.target.dataset;
@@ -37,6 +38,16 @@ function CvForge() {
     setIsExperimentalPhysicistJobExperienceInfoHidden((isExperimentalPhysicistJobExperienceInfoHidden) => !isExperimentalPhysicistJobExperienceInfoHidden);
   }
 
+  function loadDefaultData() {
+    setIsDefaultDataUsed(true)
+    setPersonalInfo(defaultDataset.personalInfo);
+  }
+
+  function clearDefaultData() {
+    setIsDefaultDataUsed(false);
+    setPersonalInfo(defaultDataset.emptyPersonalInfo);
+  }
+
   function toggleForm(id) {
     setIsFormToggled(id);
   }
@@ -47,7 +58,10 @@ function CvForge() {
         <FormConfigurator toggleForm={toggleForm}/>
 
         <div className='form-toggler'>
-          <FormDataHydrator />
+          <FormDataHydrator 
+            loadDefaultData={loadDefaultData}
+            clearDefaultData={clearDefaultData} 
+          />
 
           { isFormToggled == defaultDataset.forms.formController && ( 
             <FormDataController onChange={onChangePersonalInfo} 

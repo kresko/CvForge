@@ -32,3 +32,66 @@
     margin-bottom: 0;
     border-radius: var(--default-border-radius);
 }
+
+
+.form-data-controller-dropdown-section-item-collection {
+    display: flex;
+    flex-direction: column;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.form-data-controller-dropdown-section-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 20px;
+    border: inherit;
+    border-radius: inherit;
+    background-color: inherit;
+}
+
+.form-data-controller-dropdown-section-button span {
+    display: inherit;
+}
+
+.form-data-controller-dropdown-section-button svg {
+    width: 25px;
+    height: 25px;
+}
+
+.form-data-controller-dropdown-section-button .custom-icon {
+    align-items: center;
+}
+
+.form-data-controller-dropdown-section-button .custom-icon svg {
+    margin-right: 10px;
+}
+
+.form-data-controller-dropdown-section-button .chevron svg {
+    transform: rotate(180deg);
+    width: 15px;
+    height: 15px;
+}
+
+.form-data-controller-dropdown-section-add-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 18px 0;
+    border-top: 3px solid #f3f4f6;
+}
+
+.form-data-controller-dropdown-section-add-button {
+    display: inherit;
+    padding: 8px 18px;
+    background-color: #fff;
+    border: 4px solid #f3f4f6;
+    border-radius: 69420px;
+}
+
+.form-data-controller-dropdown-section-add-button svg {
+    margin-right: 5px;
+}

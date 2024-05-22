@@ -1,13 +1,13 @@
 import './FormConfiguratorButton.css';
 
 function FormConfiguratorButton({ content, icon, toggleForm, id }) {
-    function test() {
+    function useToggleForm() {
         toggleForm(id);
     }
 
     return (
         <>
-            <button className={`form-configurator-button ${id}`} onClick={test}>
+            <button className={`form-configurator-button ${id}`} onClick={useToggleForm}>
                 <div className='icon-container'>{icon}</div>
                 <p>{content}</p>
             </button>

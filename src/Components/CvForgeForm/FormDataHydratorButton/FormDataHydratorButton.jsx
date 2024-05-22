@@ -1,9 +1,9 @@
 import './FormDataHydratorButton.css';
 
-function FormDataHydratorButton({ content, classname='', icon }) {
+function FormDataHydratorButton({ content, classname='', icon, defaultDataClickHandler }) {
     return (
     <>
-        <button className={`form-data-hydrator-button ${classname}`}>{icon}<strong>{ content }</strong></button>
+        <button className={`form-data-hydrator-button ${classname}`} onClick={defaultDataClickHandler}>{icon}<strong>{ content }</strong></button>
     </>);
 }
 

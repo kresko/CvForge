@@ -6,6 +6,13 @@ const defaultDataset = {
       address: "Zagreb, Croatia",
     },
 
+    emptyPersonalInfo: {
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      address: "",
+    },
+
     sections: {
       ids: {
         bachelorDegreeEducation: true,

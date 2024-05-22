@@ -1,13 +1,24 @@
 import './FormDataController.css';
 import FormDataControllerInput from "../FormDataControllerInput/FormDataControllerInput";
-import FormDataControllerDropdownSection from '../FormDataControllerDropdownSection/FormDataControllerDropdownSection';
 import { FaGraduationCap } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa";
 import defaultDataset from "../../../Data/DefaultDataset";
+import { useState } from 'react';
+import FormDataControllerDropdownItem from "../FormDataControllerDropdownItem/FormDataControllerDropdownItem";
+import { FaChevronUp } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 
 function FormDataController({ onChange, fullName, email, phone, address, bachelorDegreeEducationInfo, bachelorDegreeEducationInfoClickHandler, mastersDegreeEducationInfo, mastersDegreeEducationInfoClickHandler, theoreticalPhysicistJobExperienceInfo, theoreticalPhysicistJobExperienceInfoClickHandler, experimentalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfoClickHandler }) {
-    const educationArray = [defaultDataset.sections.education.bachelorDegree.institutionName, defaultDataset.sections.education.mastersDegree.institutionName];
-    const professionalExperienceArray = [defaultDataset.sections.experience.theoreticalPhysicistJob.institutionName, defaultDataset.sections.experience.experimentalPhysicistJob.institutionName];
+    const [isEducationDropdownOpen, setIsEducationDropdownOpen] = useState(true);
+    const [isExperienceDropdownOpen, setIsExperienceDropdownOpen] = useState(true);
+
+    function handleIsEducationDropDownFormHidden() {
+        setIsEducationDropdownOpen((isEducationDropdownOpen) => !isEducationDropdownOpen);
+    }
+
+    function handleIsExperienceDropDownFormHidden() {
+        setIsExperienceDropdownOpen((isExperienceDropdownOpen) => !isExperienceDropdownOpen);
+    }
 
     return (
         <>
@@ -22,15 +33,37 @@ function FormDataController({ onChange, fullName, email, phone, address, bachelo
                 </div>
 
                 <div className='education-section'>
-                    <FormDataControllerDropdownSection label={'Education'} itemLabel={educationArray} icon={<FaGraduationCap/>} resumeInfoClickHandler={[bachelorDegreeEducationInfoClickHandler, mastersDegreeEducationInfoClickHandler]} resumeInfo={[bachelorDegreeEducationInfo, mastersDegreeEducationInfo]} />
+                    <button className={`form-data-controller-dropdown-section-button`} onClick={handleIsEducationDropDownFormHidden}>
+                        <span className='custom-icon'><FaGraduationCap/><h2>Education</h2></span>
+                        <span className='chevron'><FaChevronUp/></span>
+                    </button>
+                    <div className={`form-data-controller-dropdown-section ${isEducationDropdownOpen ? 'is-hidden' : ''}`}>
+                        <div className="form-data-controller-dropdown-section-item-collection">
+                            <FormDataControllerDropdownItem label={defaultDataset.sections.education.bachelorDegree.institutionName} resumeInfoClickHandler={bachelorDegreeEducationInfoClickHandler} resumeInfo={bachelorDegreeEducationInfo} />
+                            <FormDataControllerDropdownItem label={defaultDataset.sections.education.mastersDegree.institutionName} resumeInfoClickHandler={mastersDegreeEducationInfoClickHandler} resumeInfo={mastersDegreeEducationInfo} />
+                        </div>
+                        <div className='form-data-controller-dropdown-section-add-button-container'>
+                            <button className='form-data-controller-dropdown-section-add-button'><FaPlus /><strong>Education</strong></button>
+                        </div>
+                    </div>
                 </div>
 
                 <div className='experience-section'>
-                    <FormDataControllerDropdownSection label={'Experience'} itemLabel={professionalExperienceArray} icon={<FaBriefcase/>} resumeInfoClickHandler={[theoreticalPhysicistJobExperienceInfoClickHandler, experimentalPhysicistJobExperienceInfoClickHandler]} resumeInfo={[theoreticalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfo]} />
+                    <button className={`form-data-controller-dropdown-section-button`} onClick={handleIsExperienceDropDownFormHidden}>
+                        <span className='custom-icon'><FaBriefcase/><h2>Experience</h2></span>
+                        <span className='chevron'><FaChevronUp/></span>
+                    </button>
+                    <div className={`form-data-controller-dropdown-section ${isExperienceDropdownOpen ? 'is-hidden' : ''}`}>
+                        <div className="form-data-controller-dropdown-section-item-collection">
+                            <FormDataControllerDropdownItem label={defaultDataset.sections.experience.theoreticalPhysicistJob.institutionName} resumeInfoClickHandler={theoreticalPhysicistJobExperienceInfoClickHandler} resumeInfo={theoreticalPhysicistJobExperienceInfo} />
+                            <FormDataControllerDropdownItem label={defaultDataset.sections.experience.experimentalPhysicistJob.institutionName} resumeInfoClickHandler={experimentalPhysicistJobExperienceInfoClickHandler} resumeInfo={experimentalPhysicistJobExperienceInfo} />
+                        </div>
+                        <div className='form-data-controller-dropdown-section-add-button-container'>
+                            <button className='form-data-controller-dropdown-section-add-button'><FaPlus /><strong>Education</strong></button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
         </>
     );
 }
