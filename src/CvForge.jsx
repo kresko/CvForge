@@ -10,6 +10,9 @@ import { useState } from 'react';
 
 function CvForge() {
   const [personalInfo, setPersonalInfo] = useState(defaultDataset.personalInfo);
+  // dodaj state za education i experience dio
+  const [educationInfo, setEducationInfo] = useState(defaultDataset.education);
+  const [experienceInfo, setExperienceInfo] = useState(defaultDataset.experience);
   const [isbachelorDegreeEducationInfoHidden, setIsbachelorDegreeEducationInfoHidden] = useState(false);
   const [isMastersDegreeEducationInfoHidden, setIsMastersDegreeEducationInfoHidden] = useState(false);
   const [isTheoreticalPhysicistJobExperienceInfoHidden, setIsTheoreticalPhysicistJobExperienceInfoHidden] = useState(false);
@@ -21,6 +24,8 @@ function CvForge() {
     const { key } = e.target.dataset;
     setPersonalInfo({ ...personalInfo, [key]: e.target.value })
   }
+
+  //slozi funkciju za drop item formu 
 
   function hideBachelorDegreeEducationInfo() {
     setIsbachelorDegreeEducationInfoHidden((isbachelorDegreeEducationInfoHidden) => !isbachelorDegreeEducationInfoHidden);
@@ -41,11 +46,15 @@ function CvForge() {
   function loadDefaultData() {
     setIsDefaultDataUsed(true)
     setPersonalInfo(defaultDataset.personalInfo);
+    setEducationInfo(defaultDataset.education);
+    setExperienceInfo(defaultDataset.experience);
   }
 
   function clearDefaultData() {
     setIsDefaultDataUsed(false);
     setPersonalInfo(defaultDataset.emptyPersonalInfo);
+    setEducationInfo(defaultDataset.emptyEducation);
+    setExperienceInfo(defaultDataset.emptyExperience);
   }
 
   function toggleForm(id) {
@@ -69,6 +78,8 @@ function CvForge() {
               email={personalInfo.email} 
               phone={personalInfo.phoneNumber} 
               address={personalInfo.address}
+              educationInfo={educationInfo}
+              experienceInfo={experienceInfo}
               bachelorDegreeEducationInfo={isbachelorDegreeEducationInfoHidden}
               bachelorDegreeEducationInfoClickHandler={hideBachelorDegreeEducationInfo}
               mastersDegreeEducationInfo={isMastersDegreeEducationInfoHidden}
@@ -77,6 +88,7 @@ function CvForge() {
               theoreticalPhysicistJobExperienceInfoClickHandler={hideTheoreticalPhysicistJobExperienceInfo}
               experimentalPhysicistJobExperienceInfo={isExperimentalPhysicistJobExperienceInfoHidden}
               experimentalPhysicistJobExperienceInfoClickHandler={hideExperimentalPhysicistJobExperienceInfo}
+              isDefaultDataUsed={isDefaultDataUsed}
             /> )}
 
           { isFormToggled == defaultDataset.forms.formCustomizer && (<FormCustomizer />)}
@@ -89,11 +101,14 @@ function CvForge() {
             phone={personalInfo.phoneNumber} 
             address={personalInfo.address}/>
 
-        <RendererBody 
+        <RendererBody
+          educationInfo={educationInfo} 
+          experienceInfo={experienceInfo}
           bachelorDegreeEducationInfo={isbachelorDegreeEducationInfoHidden}
           mastersDegreeEducationInfo={isMastersDegreeEducationInfoHidden}
           theoreticalPhysicistJobExperienceInfo={isTheoreticalPhysicistJobExperienceInfoHidden}
           experimentalPhysicistJobExperienceInfo={isExperimentalPhysicistJobExperienceInfoHidden}
+          isDefaultDataUsed={isDefaultDataUsed}
           />
       </div>
     </>

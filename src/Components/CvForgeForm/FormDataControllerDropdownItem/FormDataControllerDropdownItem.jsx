@@ -3,6 +3,8 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
 function FormDataControllerDropdownItem({ label, resumeInfoClickHandler, resumeInfo }) {
+    //implementirati logiku za togglanje buttona i forme
+
     return (
         <>
             <button className='form-data-controller-dropdown-item'>
