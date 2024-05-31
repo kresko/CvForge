@@ -1,0 +1,47 @@
+.form-data-controller-experience-dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    padding: 20px;
+    border: inherit;
+    border-top: 3px solid #f3f4f6;
+    background-color: inherit;
+}
+
+.experience-form {
+    color: #000;
+    padding: 20px;
+}
+
+.experience-form label input {
+    width: 100%;
+}
+
+.experience-form .label-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.experience-form .label-container input {
+    width: 90%
+}
+
+.experience-form .label-container .start-date {
+    width: 90%;
+    display: inherit;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.experience-form .label-container .end-date {
+    width: 90%;
+    display: inherit;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.experience-form .label-area-container {
+    display: flex;
+    flex-direction: column;
+}

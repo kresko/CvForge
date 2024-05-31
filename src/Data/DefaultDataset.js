@@ -39,6 +39,14 @@ const defaultDataset = {
       }
     },
 
+    educationFormLabels: {
+      school: 'School',
+      degree: 'Degree',
+      startDate: 'Start Date',
+      endDate: 'End Date',
+      location: 'Location'
+    },
+
     emptyEducation: {
       label: 'Education',
       bachelorDegree: {
@@ -75,6 +83,15 @@ const defaultDataset = {
         endDate: 'present',
         location: 'Utgaard',
       }
+    },
+
+    experienceFormLabels: {
+      companyName: 'Company Name',
+      positionTitle: 'Position Title',
+      startDate: 'Start Date',
+      endDate: 'End Date',
+      location: 'Location',
+      description: 'Description'
     },
 
     emptyExperience: {
