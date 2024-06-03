@@ -2,9 +2,10 @@ import { useState } from 'react';
 import './FormDataControllerEducationDropdownItem.css';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import defaultDataset from '../../../Data/DefaultDataset';
 
 function FormDataControllerEducationDropdownItem({ label, resumeInfoClickHandler, resumeInfo, educationFormLabels }) {
-    //implementirati logiku za togglanje buttona i forme
+    //proslijedi podatke i zakaci mu onChange event handlera
     const [isToggled, setIsFormToggled] = useState(true);
 
     function toggleForm() {
@@ -21,9 +22,42 @@ function FormDataControllerEducationDropdownItem({ label, resumeInfoClickHandler
                     </div>
                 </button>
             : 
-                <div className='' onClick={toggleForm}>
-                    <h1>Test form</h1>
-                </div>
+                <form className='education-form'>
+                    <label>
+                        <h3>{educationFormLabels.school}</h3>
+                        <input type="text" value={'test'}/>
+                    </label>
+
+                    <label>
+                        <h3>{educationFormLabels.degree}</h3>
+                        <input type="text" value={'test'}/>
+                    </label>
+
+                    <div className="label-container">
+                        <label className='start-date'>
+                            <h3>{educationFormLabels.startDate}</h3>
+                            <input type="text" value={'test'}/>
+                        </label>
+
+                        <label className='end-date'>
+                            <h3>{educationFormLabels.endDate}</h3>
+                            <input type="text" value={'test'}/>
+                        </label>
+                    </div>
+
+                    <label>
+                        <h3>{educationFormLabels.address}</h3>
+                        <input type="text" value={'test'}/>
+                    </label>
+
+                    <div className="education-form-button-container">
+                        <button className={defaultDataset.generalGlossaryClassNames.delete} onClick={toggleForm}>{defaultDataset.generalGlossary.delete}</button>
+                        <div className="position-right">
+                            <button className={defaultDataset.generalGlossaryClassNames.cancel} onClick={toggleForm}>{defaultDataset.generalGlossary.cancel}</button>
+                            <button className={defaultDataset.generalGlossaryClassNames.save} onClick={toggleForm}>{defaultDataset.generalGlossary.save}</button>
+                        </div>
+                    </div>
+                </form>
             }
         </>
     );

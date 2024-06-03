@@ -10,7 +10,6 @@ import { useState } from 'react';
 
 function CvForge() {
   const [personalInfo, setPersonalInfo] = useState(defaultDataset.personalInfo);
-  // dodaj state za education i experience dio
   const [educationInfo, setEducationInfo] = useState(defaultDataset.education);
   const [experienceInfo, setExperienceInfo] = useState(defaultDataset.experience);
   const [isbachelorDegreeEducationInfoHidden, setIsbachelorDegreeEducationInfoHidden] = useState(false);

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './FormDataControllerExperienceDropdownItem.css';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import defaultDataset from '../../../Data/DefaultDataset';
 
 function FormDataControllerExperienceDropdownItem({ label, resumeInfoClickHandler, resumeInfo, experienceFormLabels }) {
     //implementirati logiku za togglanje buttona i forme
@@ -51,12 +52,16 @@ function FormDataControllerExperienceDropdownItem({ label, resumeInfoClickHandle
 
                     <label className='label-area-container'>
                         {experienceFormLabels.description}
-                        <textarea cols="30" rows="10"></textarea>
+                        <textarea cols="30" rows="10" value={'test'}></textarea>
                     </label>
 
-                    <button onClick={toggleForm}>Delete</button>
-                    <button onClick={toggleForm}>Cancel</button>
-                    <button onClick={toggleForm}>Save</button>
+                    <div className="experience-form-button-container">
+                        <button className={defaultDataset.generalGlossaryClassNames.delete} onClick={toggleForm}>Delete</button>
+                        <div className="position-right">
+                            <button className={defaultDataset.generalGlossaryClassNames.cancel} onClick={toggleForm}>Cancel</button>
+                            <button className={defaultDataset.generalGlossaryClassNames.save} onClick={toggleForm}>Save</button>
+                        </div>
+                    </div>                    
                 </form>
             }
         </>

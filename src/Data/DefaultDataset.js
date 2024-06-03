@@ -1,4 +1,17 @@
 const defaultDataset = {
+    //general glossary
+    generalGlossary: {
+      delete: 'Delete',
+      cancel: 'Cancel',
+      save: 'Save'
+    },
+
+    generalGlossaryClassNames: {
+      delete: 'delete',
+      cancel: 'cancel',
+      save: 'save'
+    },
+
     personalInfo: {
       fullName: "Edo Kreš",
       email: "edo.kres@gmail.com",
@@ -44,7 +57,7 @@ const defaultDataset = {
       degree: 'Degree',
       startDate: 'Start Date',
       endDate: 'End Date',
-      location: 'Location'
+      address: 'Address'
     },
 
     emptyEducation: {

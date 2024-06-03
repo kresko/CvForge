@@ -15,7 +15,13 @@
 }
 
 .experience-form label input {
-    width: 100%;
+    width: 97%;
+    padding: 10px 0px 10px 10px;
+    margin: 5px 0 10px 0;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background-color: #f3f4f6;
+    transition: border .25s, box-shadow .25s;
 }
 
 .experience-form .label-container {
@@ -44,4 +50,56 @@
 .experience-form .label-area-container {
     display: flex;
     flex-direction: column;
+}
+
+.experience-form .label-area-container textarea {
+    background-color: #f3f4f6;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 10px;
+    transition: border .25s, box-shadow .25s;
+    height: 65px;
+    max-width: 100%;
+    min-height: 42px;
+}
+
+.experience-form label input:focus,
+.experience-form .label-area-container textarea:focus {
+    border-color: #3b83f6;
+    outline: none;
+    box-shadow: 0px 3px 15px #3b83f633;
+}
+
+.experience-form-button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.experience-form-button-container button {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+ 
+.experience-form-button-container .delete,
+.experience-form-button-container .cancel {
+    background-color: initial;
+    color: grey;
+    outline: 1px solid grey;
+}
+
+.experience-form-button-container .save {
+    background-color: #187ff5;
+    color: #fff;
+    outline: 1px solid #187ff5;
+}
+
+.experience-form-button-container .position-right {
+    display: inherit;
+}
+
+.experience-form-button-container .position-right button {
+    margin-left: 10px;
 }

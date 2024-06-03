@@ -5,7 +5,7 @@ import { FaBriefcase } from "react-icons/fa";
 import { useState } from 'react';
 import { FaChevronUp } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
-import FormDataControllerExperienceDropdownItem from '../FormDataControllerExperienceDropdownItem/FormDataControllerEducationDropdownItem';
+import FormDataControllerExperienceDropdownItem from '../FormDataControllerExperienceDropdownItem/FormDataControllerExperienceDropdownItem';
 import FormDataControllerEducationDropdownItem from '../FormDataControllerEducationDropdownItem/FormDataControllerEducationDropdownItem';
 import defaultDataset from '../../../Data/DefaultDataset';
 
