@@ -18,6 +18,10 @@ function CvForge() {
   const [isExperimentalPhysicistJobExperienceInfoHidden, setIsExperimentalPhysicistJobExperienceInfoHidden] = useState(false);
   const [isFormToggled, setIsFormToggled] = useState(defaultDataset.forms.formController);
   const [isDefaultDataUsed, setIsDefaultDataUsed] = useState(true); 
+  const [isbachelorDegreeEducationItemRemoved, setIsbachelorDegreeEducationItemRemoved] = useState(false);
+  const [isMastersDegreeEducationItemRemoved, setIsMastersDegreeEducationItemRemoved] = useState(false);
+  const [isTheoreticalPhysicistJobExperienceItemRemoved, setIsTheoreticalPhysicistJobExperienceItemRemoved] = useState(false);
+  const [isExperimentalPhysicistJobExperienceItemRemoved, setIsExperimentalPhysicistJobExperienceItemRemoved] = useState(false);
 
   function onChangePersonalInfo(e) {
     const { key } = e.target.dataset;
@@ -47,6 +51,10 @@ function CvForge() {
     setPersonalInfo(defaultDataset.personalInfo);
     setEducationInfo(defaultDataset.education);
     setExperienceInfo(defaultDataset.experience);
+    setIsbachelorDegreeEducationItemRemoved(false);
+    setIsMastersDegreeEducationItemRemoved(false);
+    setIsTheoreticalPhysicistJobExperienceItemRemoved(false);
+    setIsExperimentalPhysicistJobExperienceItemRemoved(false);
   }
 
   function clearDefaultData() {
@@ -58,6 +66,22 @@ function CvForge() {
 
   function toggleForm(id) {
     setIsFormToggled(id);
+  }
+
+  function removeBachelorDegreeEducationItem() {
+    setIsbachelorDegreeEducationItemRemoved(false);
+  }
+
+  function removeMastersDegreeEducationItem() {
+    setIsMastersDegreeEducationItemRemoved(false);
+  }
+
+  function removeTheoreticalPhysicistJobExperienceItem() {
+    setIsTheoreticalPhysicistJobExperienceItemRemoved(false);
+  }
+
+  function removeExperimentalPhysicistJobExperienceItem() {
+    setIsExperimentalPhysicistJobExperienceItemRemoved(false);
   }
 
   return (
@@ -88,6 +112,14 @@ function CvForge() {
               experimentalPhysicistJobExperienceInfo={isExperimentalPhysicistJobExperienceInfoHidden}
               experimentalPhysicistJobExperienceInfoClickHandler={hideExperimentalPhysicistJobExperienceInfo}
               isDefaultDataUsed={isDefaultDataUsed}
+              removeBachelorDegreeEducationItem={removeBachelorDegreeEducationItem}
+              isbachelorDegreeEducationItemRemoved={isbachelorDegreeEducationItemRemoved}
+              removeMastersDegreeEducationItem={removeMastersDegreeEducationItem}
+              isMastersDegreeEducationItemRemoved={isMastersDegreeEducationItemRemoved}
+              removeTheoreticalPhysicistJobExperienceItem={removeTheoreticalPhysicistJobExperienceItem}
+              isTheoreticalPhysicistJobExperienceItemRemoved={isTheoreticalPhysicistJobExperienceItemRemoved}
+              removeExperimentalPhysicistJobExperienceItem={removeExperimentalPhysicistJobExperienceItem}
+              isExperimentalPhysicistJobExperienceItemRemoved={isExperimentalPhysicistJobExperienceItemRemoved}
             /> )}
 
           { isFormToggled == defaultDataset.forms.formCustomizer && (<FormCustomizer />)}

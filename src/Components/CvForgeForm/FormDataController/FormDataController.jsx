@@ -11,7 +11,9 @@ import defaultDataset from '../../../Data/DefaultDataset';
 
 function FormDataController({ onChange, fullName, email, phone, address, educationInfo, experienceInfo, bachelorDegreeEducationInfo, bachelorDegreeEducationInfoClickHandler, 
     mastersDegreeEducationInfo, mastersDegreeEducationInfoClickHandler, theoreticalPhysicistJobExperienceInfo, theoreticalPhysicistJobExperienceInfoClickHandler, 
-    experimentalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfoClickHandler, isDefaultDataUsed }) {
+    experimentalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfoClickHandler, isDefaultDataUsed, removeBachelorDegreeEducationItem, isbachelorDegreeEducationItemRemoved,
+    removeMastersDegreeEducationItem, isMastersDegreeEducationItemRemoved, removeTheoreticalPhysicistJobExperienceItem, isTheoreticalPhysicistJobExperienceItemRemoved, removeExperimentalPhysicistJobExperienceItem,
+    isExperimentalPhysicistJobExperienceItemRemoved}) {
     const [isEducationDropdownOpen, setIsEducationDropdownOpen] = useState(true);
     const [isExperienceDropdownOpen, setIsExperienceDropdownOpen] = useState(true);
 
@@ -42,8 +44,25 @@ function FormDataController({ onChange, fullName, email, phone, address, educati
                     </button>
                     <div className={`form-data-controller-dropdown-section ${(isEducationDropdownOpen || !isDefaultDataUsed) ? 'is-hidden' : ''}`}>
                         <div className="form-data-controller-dropdown-section-item-collection">
-                            <FormDataControllerEducationDropdownItem label={educationInfo.bachelorDegree.institutionName} resumeInfoClickHandler={bachelorDegreeEducationInfoClickHandler} resumeInfo={bachelorDegreeEducationInfo} educationFormLabels={defaultDataset.educationFormLabels}/>
-                            <FormDataControllerEducationDropdownItem label={educationInfo.mastersDegree.institutionName} resumeInfoClickHandler={mastersDegreeEducationInfoClickHandler} resumeInfo={mastersDegreeEducationInfo} educationFormLabels={defaultDataset.educationFormLabels}/>
+                            <FormDataControllerEducationDropdownItem 
+                                label={educationInfo.bachelorDegree.institutionName} 
+                                resumeInfoClickHandler={bachelorDegreeEducationInfoClickHandler} 
+                                resumeInfo={bachelorDegreeEducationInfo} 
+                                educationFormLabels={defaultDataset.educationFormLabels} 
+                                educationInfo={educationInfo.bachelorDegree} 
+                                removeBachelorDegreeEducationItem={removeBachelorDegreeEducationItem} 
+                                isbachelorDegreeEducationItemRemoved={isbachelorDegreeEducationItemRemoved}
+                                removeMastersDegreeEducationItem={removeMastersDegreeEducationItem}
+                                //nastavi dalje
+                                />
+                            <FormDataControllerEducationDropdownItem 
+                            label={educationInfo.mastersDegree.institutionName} 
+                            resumeInfoClickHandler={mastersDegreeEducationInfoClickHandler} 
+                            resumeInfo={mastersDegreeEducationInfo} 
+                            educationFormLabels={defaultDataset.educationFormLabels} 
+                            educationInfo={educationInfo.mastersDegree} 
+                            removeDropDownItem={removeDropDownItem} 
+                            isItemRemoved={isItemRemoved}/>
                         </div>
                         <div className='form-data-controller-dropdown-section-add-button-container'>
                             <button className='form-data-controller-dropdown-section-add-button'><FaPlus /><strong>Education</strong></button>
@@ -58,8 +77,23 @@ function FormDataController({ onChange, fullName, email, phone, address, educati
                     </button>
                     <div className={`form-data-controller-dropdown-section ${(isExperienceDropdownOpen || !isDefaultDataUsed) ? 'is-hidden' : ''}`}>
                         <div className="form-data-controller-dropdown-section-item-collection">
-                            <FormDataControllerExperienceDropdownItem label={experienceInfo.theoreticalPhysicistJob.institutionName} resumeInfoClickHandler={theoreticalPhysicistJobExperienceInfoClickHandler} resumeInfo={theoreticalPhysicistJobExperienceInfo} experienceFormLabels={defaultDataset.experienceFormLabels}/>
-                            <FormDataControllerExperienceDropdownItem label={experienceInfo.experimentalPhysicistJob.institutionName} resumeInfoClickHandler={experimentalPhysicistJobExperienceInfoClickHandler} resumeInfo={experimentalPhysicistJobExperienceInfo} experienceFormLabels={defaultDataset.experienceFormLabels}/>
+                            <FormDataControllerExperienceDropdownItem 
+                                label={experienceInfo.theoreticalPhysicistJob.institutionName} 
+                                resumeInfoClickHandler={theoreticalPhysicistJobExperienceInfoClickHandler} 
+                                resumeInfo={theoreticalPhysicistJobExperienceInfo} 
+                                experienceFormLabels={defaultDataset.experienceFormLabels} 
+                                experienceInfo={experienceInfo.theoreticalPhysicistJob} 
+                                removeDropDownItem={removeDropDownItem} 
+                                isItemRemoved={isItemRemoved}/>
+                                
+                            <FormDataControllerExperienceDropdownItem 
+                                label={experienceInfo.experimentalPhysicistJob.institutionName} 
+                                resumeInfoClickHandler={experimentalPhysicistJobExperienceInfoClickHandler} 
+                                resumeInfo={experimentalPhysicistJobExperienceInfo} 
+                                experienceFormLabels={defaultDataset.experienceFormLabels} 
+                                experienceInfo={experienceInfo.experimentalPhysicistJob} 
+                                removeDropDownItem={removeDropDownItem} 
+                                isItemRemoved={isItemRemoved}/>
                         </div>
                         <div className='form-data-controller-dropdown-section-add-button-container'>
                             <button className='form-data-controller-dropdown-section-add-button'><FaPlus /><strong>Education</strong></button>
