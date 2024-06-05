@@ -1,6 +1,6 @@
 import './RendererBodySection.css';
 
-function RendererBodySection({ startDate, endDate, location, insitutionName, degree, description='', resumeInfo, isDefaultDataUsed }) {
+function RendererBodySection({ testInfo, startDate, endDate, location, insitutionName, degree, description='', resumeInfo, isDefaultDataUsed }) {
     return (
         <>
             <div className={`renderer-body-section ${(resumeInfo || !isDefaultDataUsed) ? 'hidden' : ''}`}>
@@ -9,7 +9,7 @@ function RendererBodySection({ startDate, endDate, location, insitutionName, deg
                     <p className="location">{location}</p>
                 </div>
                 <div className="institution">
-                    <p className="institution-name"><strong>{insitutionName}</strong></p>
+                    <p className="institution-name"><strong>{insitutionName}</strong></p> 
                     <p className="title">{degree}</p>
                     <p className="institution-descrption">
                         {description}

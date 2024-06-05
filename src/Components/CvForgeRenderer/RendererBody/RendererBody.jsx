@@ -1,13 +1,14 @@
 import RendererBodySection from "../RendererBodySection/RendererBodySection";
 import './RendererBody.css';
 
-function RendererBody({ educationInfo, experienceInfo, bachelorDegreeEducationInfo, mastersDegreeEducationInfo, theoreticalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfo, isDefaultDataUsed }) {
+function RendererBody({ testInfo, educationInfo, experienceInfo, bachelorDegreeEducationInfo, mastersDegreeEducationInfo, theoreticalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfo, isDefaultDataUsed }) {
     return (
         <>
             <div className="renderer-body-education">
                 <h3>{educationInfo.label}</h3>
 
                 <RendererBodySection 
+                    testInfo={testInfo}
                     startDate={educationInfo.bachelorDegree.startDate}
                     endDate={educationInfo.bachelorDegree.endDate}
                     location={educationInfo.bachelorDegree.location}
@@ -18,6 +19,7 @@ function RendererBody({ educationInfo, experienceInfo, bachelorDegreeEducationIn
                 />
 
                 <RendererBodySection 
+                    testInfo={testInfo}
                     startDate={educationInfo.mastersDegree.startDate}
                     endDate={educationInfo.mastersDegree.endDate}
                     location={educationInfo.mastersDegree.location}
@@ -32,6 +34,7 @@ function RendererBody({ educationInfo, experienceInfo, bachelorDegreeEducationIn
                 <h3>{experienceInfo.label}</h3>
 
                 <RendererBodySection 
+                    testInfo={testInfo}
                     startDate={experienceInfo.theoreticalPhysicistJob.startDate}
                     endDate={experienceInfo.theoreticalPhysicistJob.endDate}
                     location={experienceInfo.theoreticalPhysicistJob.location}
@@ -43,6 +46,7 @@ function RendererBody({ educationInfo, experienceInfo, bachelorDegreeEducationIn
                 />
 
                 <RendererBodySection 
+                    testInfo={testInfo}
                     startDate={experienceInfo.experimentalPhysicistJob.startDate}
                     endDate={experienceInfo.experimentalPhysicistJob.endDate}
                     location={experienceInfo.experimentalPhysicistJob.location}

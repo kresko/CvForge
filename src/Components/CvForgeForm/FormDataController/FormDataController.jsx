@@ -3,13 +3,13 @@ import FormDataControllerInput from "../FormDataControllerInput/FormDataControll
 import { FaGraduationCap } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa";
 import { useState } from 'react';
-import { FaChevronUp } from "react-icons/fa";
+import { FaChevronUp } from "react-icons/fa"
 import { FaPlus } from "react-icons/fa";
 import FormDataControllerExperienceDropdownItem from '../FormDataControllerExperienceDropdownItem/FormDataControllerExperienceDropdownItem';
 import FormDataControllerEducationDropdownItem from '../FormDataControllerEducationDropdownItem/FormDataControllerEducationDropdownItem';
 import defaultDataset from '../../../Data/DefaultDataset';
 
-function FormDataController({ onChange, fullName, email, phone, address, educationInfo, experienceInfo, bachelorDegreeEducationInfo, bachelorDegreeEducationInfoClickHandler, 
+function FormDataController({ onChange, onChangeEducationInfo, onChangeExperienceInfo, testInfo, fullName, email, phone, address, educationInfo, experienceInfo, bachelorDegreeEducationInfo, bachelorDegreeEducationInfoClickHandler, 
     mastersDegreeEducationInfo, mastersDegreeEducationInfoClickHandler, theoreticalPhysicistJobExperienceInfo, theoreticalPhysicistJobExperienceInfoClickHandler, 
     experimentalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfoClickHandler, isDefaultDataUsed, removeBachelorDegreeEducationItem, isbachelorDegreeEducationItemRemoved,
     removeMastersDegreeEducationItem, isMastersDegreeEducationItemRemoved, removeTheoreticalPhysicistJobExperienceItem, isTheoreticalPhysicistJobExperienceItemRemoved, removeExperimentalPhysicistJobExperienceItem,
@@ -50,19 +50,20 @@ function FormDataController({ onChange, fullName, email, phone, address, educati
                                 resumeInfo={bachelorDegreeEducationInfo} 
                                 educationFormLabels={defaultDataset.educationFormLabels} 
                                 educationInfo={educationInfo.bachelorDegree} 
-                                removeBachelorDegreeEducationItem={removeBachelorDegreeEducationItem} 
-                                isbachelorDegreeEducationItemRemoved={isbachelorDegreeEducationItemRemoved}
-                                removeMastersDegreeEducationItem={removeMastersDegreeEducationItem}
-                                //nastavi dalje
+                                onChangeEducationInfo={onChangeEducationInfo}
+                                removeDropDownItem={removeBachelorDegreeEducationItem} 
+                                isItemRemoved={isbachelorDegreeEducationItemRemoved}
                                 />
                             <FormDataControllerEducationDropdownItem 
-                            label={educationInfo.mastersDegree.institutionName} 
-                            resumeInfoClickHandler={mastersDegreeEducationInfoClickHandler} 
-                            resumeInfo={mastersDegreeEducationInfo} 
-                            educationFormLabels={defaultDataset.educationFormLabels} 
-                            educationInfo={educationInfo.mastersDegree} 
-                            removeDropDownItem={removeDropDownItem} 
-                            isItemRemoved={isItemRemoved}/>
+                                label={educationInfo.mastersDegree.institutionName} 
+                                resumeInfoClickHandler={mastersDegreeEducationInfoClickHandler} 
+                                resumeInfo={mastersDegreeEducationInfo} 
+                                educationFormLabels={defaultDataset.educationFormLabels} 
+                                educationInfo={educationInfo.mastersDegree} 
+                                onChangeEducationInfo={onChangeEducationInfo}
+                                removeDropDownItem={removeMastersDegreeEducationItem}
+                                isItemRemoved={isMastersDegreeEducationItemRemoved}
+                            />
                         </div>
                         <div className='form-data-controller-dropdown-section-add-button-container'>
                             <button className='form-data-controller-dropdown-section-add-button'><FaPlus /><strong>Education</strong></button>
@@ -83,17 +84,23 @@ function FormDataController({ onChange, fullName, email, phone, address, educati
                                 resumeInfo={theoreticalPhysicistJobExperienceInfo} 
                                 experienceFormLabels={defaultDataset.experienceFormLabels} 
                                 experienceInfo={experienceInfo.theoreticalPhysicistJob} 
-                                removeDropDownItem={removeDropDownItem} 
-                                isItemRemoved={isItemRemoved}/>
-                                
+                                onChangeExperienceInfo={onChangeExperienceInfo}
+                                removeDropDownItem={removeTheoreticalPhysicistJobExperienceItem}
+                                isItemRemoved={isTheoreticalPhysicistJobExperienceItemRemoved}
+                                testInfo={testInfo}
+                            />
+
                             <FormDataControllerExperienceDropdownItem 
                                 label={experienceInfo.experimentalPhysicistJob.institutionName} 
                                 resumeInfoClickHandler={experimentalPhysicistJobExperienceInfoClickHandler} 
                                 resumeInfo={experimentalPhysicistJobExperienceInfo} 
                                 experienceFormLabels={defaultDataset.experienceFormLabels} 
                                 experienceInfo={experienceInfo.experimentalPhysicistJob} 
-                                removeDropDownItem={removeDropDownItem} 
-                                isItemRemoved={isItemRemoved}/>
+                                onChangeExperienceInfo={onChangeExperienceInfo}
+                                removeDropDownItem={removeExperimentalPhysicistJobExperienceItem}
+                                isItemRemoved={isExperimentalPhysicistJobExperienceItemRemoved}
+                                testInfo={testInfo}
+                            />
                         </div>
                         <div className='form-data-controller-dropdown-section-add-button-container'>
                             <button className='form-data-controller-dropdown-section-add-button'><FaPlus /><strong>Education</strong></button>

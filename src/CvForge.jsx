@@ -12,6 +12,7 @@ function CvForge() {
   const [personalInfo, setPersonalInfo] = useState(defaultDataset.personalInfo);
   const [educationInfo, setEducationInfo] = useState(defaultDataset.education);
   const [experienceInfo, setExperienceInfo] = useState(defaultDataset.experience);
+  const [testInfo, setTestInfo] = useState(defaultDataset.experience.theoreticalPhysicistJob);
   const [isbachelorDegreeEducationInfoHidden, setIsbachelorDegreeEducationInfoHidden] = useState(false);
   const [isMastersDegreeEducationInfoHidden, setIsMastersDegreeEducationInfoHidden] = useState(false);
   const [isTheoreticalPhysicistJobExperienceInfoHidden, setIsTheoreticalPhysicistJobExperienceInfoHidden] = useState(false);
@@ -28,7 +29,15 @@ function CvForge() {
     setPersonalInfo({ ...personalInfo, [key]: e.target.value })
   }
 
-  //slozi funkciju za drop item formu 
+  function onChangeEducationInfo(e) {
+    const { key } = e.target.dataset;
+    setEducationInfo({ ...educationInfo, [key]: e.target.value });
+  }
+
+  function onChangeExperienceInfo(e) {
+    const { key } = e.target.dataset;
+    setExperienceInfo({ ...experienceInfo, [key]: e.target.value });
+  }
 
   function hideBachelorDegreeEducationInfo() {
     setIsbachelorDegreeEducationInfoHidden((isbachelorDegreeEducationInfoHidden) => !isbachelorDegreeEducationInfoHidden);
@@ -69,19 +78,19 @@ function CvForge() {
   }
 
   function removeBachelorDegreeEducationItem() {
-    setIsbachelorDegreeEducationItemRemoved(false);
+    setIsbachelorDegreeEducationItemRemoved(true);
   }
 
   function removeMastersDegreeEducationItem() {
-    setIsMastersDegreeEducationItemRemoved(false);
+    setIsMastersDegreeEducationItemRemoved(true);
   }
 
   function removeTheoreticalPhysicistJobExperienceItem() {
-    setIsTheoreticalPhysicistJobExperienceItemRemoved(false);
+    setIsTheoreticalPhysicistJobExperienceItemRemoved(true);
   }
 
   function removeExperimentalPhysicistJobExperienceItem() {
-    setIsExperimentalPhysicistJobExperienceItemRemoved(false);
+    setIsExperimentalPhysicistJobExperienceItemRemoved(true);
   }
 
   return (
@@ -96,7 +105,10 @@ function CvForge() {
           />
 
           { isFormToggled == defaultDataset.forms.formController && ( 
-            <FormDataController onChange={onChangePersonalInfo} 
+            <FormDataController onChange={onChangePersonalInfo}
+              onChangeEducationInfo={onChangeEducationInfo} 
+              onChangeExperienceInfo={onChangeExperienceInfo}
+              testInfo={testInfo}
               fullName={personalInfo.fullName} 
               email={personalInfo.email} 
               phone={personalInfo.phoneNumber} 
@@ -133,6 +145,7 @@ function CvForge() {
             address={personalInfo.address}/>
 
         <RendererBody
+          testInfo={testInfo}
           educationInfo={educationInfo} 
           experienceInfo={experienceInfo}
           bachelorDegreeEducationInfo={isbachelorDegreeEducationInfoHidden}

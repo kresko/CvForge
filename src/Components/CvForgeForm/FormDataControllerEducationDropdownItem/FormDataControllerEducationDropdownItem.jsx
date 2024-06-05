@@ -21,13 +21,13 @@ function FormDataControllerEducationDropdownItem({ label, resumeInfoClickHandler
         <>
             {isToggled ? 
                 (!isItemRemoved ? 
-                    <button className='form-data-controller-education-dropdown-item' onClick={toggleForm}>
-                    <h3><strong>{label}</strong></h3>
-                    <div className='form-data-controller-education-dropdown-item-button' onClick={resumeInfoClickHandler}>
-                        <i>{resumeInfo ? <FaEyeSlash /> : <FaEye />}</i>
-                    </div>
-                </button>    
-                    : null)
+                    <button className='form-data-controller-education-dropdown-item'>
+                        <h3 onClick={toggleForm}><strong>{label}</strong></h3>
+                        <div className='form-data-controller-education-dropdown-item-button' onClick={resumeInfoClickHandler}>
+                            <i>{resumeInfo ? <FaEyeSlash /> : <FaEye />}</i>
+                        </div>
+                    </button>    
+                : null)
                 
             : 
                 <form className='education-form'>
