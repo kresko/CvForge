@@ -4,8 +4,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import defaultDataset from '../../../Data/DefaultDataset';
 
-function FormDataControllerExperienceDropdownItem({ label, resumeInfoClickHandler, resumeInfo, experienceFormLabels, experienceInfo, onChangeExperienceInfo, removeDropDownItem, isItemRemoved, testInfo}) {
-    //implementirati logiku za togglanje buttona i forme
+function FormDataControllerExperienceDropdownItem({ label, resumeInfoClickHandler, resumeInfo, experienceFormLabels, experienceInfo, onChangeExperienceInfo, removeDropDownItem, isItemRemoved }) {
     const [isToggled, setIsFormToggled] = useState(true);
 
     function toggleForm() {
@@ -37,29 +36,29 @@ function FormDataControllerExperienceDropdownItem({ label, resumeInfoClickHandle
 
                     <label>
                         {experienceFormLabels.positionTitle}
-                        <input type="text" value={experienceInfo.occupation} onChange={onChangeExperienceInfo} data-key={experienceInfo.occupation}/>
+                        <input type="text" value={experienceInfo.occupation} onChange={onChangeExperienceInfo} data-key={'occupation'}/>
                     </label>
 
                     <div className="label-container">
                         <label className='start-date'>
                             {experienceFormLabels.startDate}
-                            <input type="text" value={experienceInfo.startDate} onChange={onChangeExperienceInfo} data-key={experienceInfo.startDate}/>
+                            <input type="text" value={experienceInfo.startDate} onChange={onChangeExperienceInfo} data-key={'startDate'}/>
                         </label>
 
                         <label className='end-date'>
                             {experienceFormLabels.endDate}
-                            <input type="text" value={experienceInfo.endDate} onChange={onChangeExperienceInfo} data-key={experienceInfo.endDate}/>
+                            <input type="text" value={experienceInfo.endDate} onChange={onChangeExperienceInfo} data-key={'endDate'}/>
                         </label>
                     </div>
 
                     <label>
                         {experienceFormLabels.location}
-                        <input type="text" value={experienceInfo.location} onChange={onChangeExperienceInfo} data-key={experienceInfo.location}/>
+                        <input type="text" value={experienceInfo.location} onChange={onChangeExperienceInfo} data-key={'location'}/>
                     </label>
 
                     <label className='label-area-container'>
                         {experienceFormLabels.description}
-                        <textarea cols="30" rows="10" value={experienceInfo.jobDescription} onChange={onChangeExperienceInfo} data-key={experienceInfo.jobDescription}></textarea>
+                        <textarea cols="30" rows="10" value={experienceInfo.jobDescription} onChange={onChangeExperienceInfo} data-key={'jobDescription'}></textarea>
                     </label>
 
                     <div className="experience-form-button-container">

@@ -10,9 +10,10 @@ import { useState } from 'react';
 
 function CvForge() {
   const [personalInfo, setPersonalInfo] = useState(defaultDataset.personalInfo);
-  const [educationInfo, setEducationInfo] = useState(defaultDataset.education);
-  const [experienceInfo, setExperienceInfo] = useState(defaultDataset.experience);
-  const [testInfo, setTestInfo] = useState(defaultDataset.experience.theoreticalPhysicistJob);
+  const [educationInfoBachelorDegree, setEducationInfoBachelorDegree] = useState(defaultDataset.education.bachelorDegree);
+  const [educationInfoMastersDegree, setEducationInfoMastersDegree] = useState(defaultDataset.education.mastersDegree);
+  const [experienceInfoTheoreticalPhysicistJob, setExperienceInfoTheoreticalPhysicistJob] = useState(defaultDataset.experience.theoreticalPhysicistJob);
+  const [experienceInfoExperimentalPhysicistJob, setExperienceInfoExperimentalPhysicistJob] = useState(defaultDataset.experience.experimentalPhysicistJob);
   const [isbachelorDegreeEducationInfoHidden, setIsbachelorDegreeEducationInfoHidden] = useState(false);
   const [isMastersDegreeEducationInfoHidden, setIsMastersDegreeEducationInfoHidden] = useState(false);
   const [isTheoreticalPhysicistJobExperienceInfoHidden, setIsTheoreticalPhysicistJobExperienceInfoHidden] = useState(false);
@@ -29,14 +30,24 @@ function CvForge() {
     setPersonalInfo({ ...personalInfo, [key]: e.target.value })
   }
 
-  function onChangeEducationInfo(e) {
+  function onChangeEducationInfoBachelorDegree(e) {
     const { key } = e.target.dataset;
-    setEducationInfo({ ...educationInfo, [key]: e.target.value });
+    setEducationInfoBachelorDegree({ ...educationInfoBachelorDegree, [key]: e.target.value });
   }
 
-  function onChangeExperienceInfo(e) {
+  function onChangeEducationInfoMastersDegree(e) {
     const { key } = e.target.dataset;
-    setExperienceInfo({ ...experienceInfo, [key]: e.target.value });
+    setEducationInfoMastersDegree({ ...educationInfoMastersDegree, [key]: e.target.value });
+  }
+
+  function onChangeExperienceInfoTheoreticalPhysicistJob(e) {
+    const { key } = e.target.dataset;
+    setExperienceInfoTheoreticalPhysicistJob({ ...experienceInfoTheoreticalPhysicistJob, [key]: e.target.value });
+  }
+
+  function onChangeExperienceInfoExperimentalPhysicistJob(e) {
+    const { key } = e.target.dataset;
+    setExperienceInfoExperimentalPhysicistJob({ ...experienceInfoExperimentalPhysicistJob, [key]: e.target.value });
   }
 
   function hideBachelorDegreeEducationInfo() {
@@ -58,8 +69,10 @@ function CvForge() {
   function loadDefaultData() {
     setIsDefaultDataUsed(true)
     setPersonalInfo(defaultDataset.personalInfo);
-    setEducationInfo(defaultDataset.education);
-    setExperienceInfo(defaultDataset.experience);
+    setEducationInfoBachelorDegree(defaultDataset.education.bachelorDegree);
+    setEducationInfoMastersDegree(defaultDataset.education.mastersDegree);
+    setExperienceInfoTheoreticalPhysicistJob(defaultDataset.experience.theoreticalPhysicistJob);
+    setExperienceInfoExperimentalPhysicistJob(defaultDataset.experience.experimentalPhysicistJob);
     setIsbachelorDegreeEducationItemRemoved(false);
     setIsMastersDegreeEducationItemRemoved(false);
     setIsTheoreticalPhysicistJobExperienceItemRemoved(false);
@@ -69,8 +82,10 @@ function CvForge() {
   function clearDefaultData() {
     setIsDefaultDataUsed(false);
     setPersonalInfo(defaultDataset.emptyPersonalInfo);
-    setEducationInfo(defaultDataset.emptyEducation);
-    setExperienceInfo(defaultDataset.emptyExperience);
+    setEducationInfoBachelorDegree(defaultDataset.education.bachelorDegree);
+    setEducationInfoMastersDegree(defaultDataset.education.mastersDegree);
+    setExperienceInfoTheoreticalPhysicistJob(defaultDataset.experience.theoreticalPhysicistJob);
+    setExperienceInfoExperimentalPhysicistJob(defaultDataset.experience.experimentalPhysicistJob);
   }
 
   function toggleForm(id) {
@@ -106,15 +121,18 @@ function CvForge() {
 
           { isFormToggled == defaultDataset.forms.formController && ( 
             <FormDataController onChange={onChangePersonalInfo}
-              onChangeEducationInfo={onChangeEducationInfo} 
-              onChangeExperienceInfo={onChangeExperienceInfo}
-              testInfo={testInfo}
+              onChangeEducationInfoBachelorDegree={onChangeEducationInfoBachelorDegree} 
+              onChangeEducationInfoMastersDegree={onChangeEducationInfoMastersDegree}
+              onChangeExperienceInfoTheoreticalPhysicistJob={onChangeExperienceInfoTheoreticalPhysicistJob}
+              onChangeExperienceInfoExperimentalPhysicistJob={onChangeExperienceInfoExperimentalPhysicistJob}
+              educationInfoBachelorDegree={educationInfoBachelorDegree}
+              educationInfoMastersDegree={educationInfoMastersDegree}
+              experienceInfoTheoreticalPhysicistJob={experienceInfoTheoreticalPhysicistJob}
+              experienceInfoExperimentalPhysicistJob={experienceInfoExperimentalPhysicistJob}
               fullName={personalInfo.fullName} 
               email={personalInfo.email} 
               phone={personalInfo.phoneNumber} 
               address={personalInfo.address}
-              educationInfo={educationInfo}
-              experienceInfo={experienceInfo}
               bachelorDegreeEducationInfo={isbachelorDegreeEducationInfoHidden}
               bachelorDegreeEducationInfoClickHandler={hideBachelorDegreeEducationInfo}
               mastersDegreeEducationInfo={isMastersDegreeEducationInfoHidden}
@@ -145,9 +163,10 @@ function CvForge() {
             address={personalInfo.address}/>
 
         <RendererBody
-          testInfo={testInfo}
-          educationInfo={educationInfo} 
-          experienceInfo={experienceInfo}
+          educationInfoBachelorDegree={educationInfoBachelorDegree} 
+          educationInfoMastersDegree={educationInfoMastersDegree}
+          experienceInfoTheoreticalPhysicistJob={experienceInfoTheoreticalPhysicistJob}
+          experienceInfoExperimentalPhysicistJob={experienceInfoExperimentalPhysicistJob}
           bachelorDegreeEducationInfo={isbachelorDegreeEducationInfoHidden}
           mastersDegreeEducationInfo={isMastersDegreeEducationInfoHidden}
           theoreticalPhysicistJobExperienceInfo={isTheoreticalPhysicistJobExperienceInfoHidden}

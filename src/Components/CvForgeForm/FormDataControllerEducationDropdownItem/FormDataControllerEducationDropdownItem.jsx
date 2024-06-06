@@ -4,8 +4,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import defaultDataset from '../../../Data/DefaultDataset';
 
-function FormDataControllerEducationDropdownItem({ label, resumeInfoClickHandler, resumeInfo, educationFormLabels, educationInfo, removeDropDownItem, isItemRemoved}) {
-    //proslijedi podatke i zakaci mu onChange event handlera
+function FormDataControllerEducationDropdownItem({ label, resumeInfoClickHandler, resumeInfo, educationFormLabels, educationInfo, onChangeEducationInfo, removeDropDownItem, isItemRemoved}) {
     const [isToggled, setIsFormToggled] = useState(true);
 
     function toggleForm() {
@@ -28,34 +27,33 @@ function FormDataControllerEducationDropdownItem({ label, resumeInfoClickHandler
                         </div>
                     </button>    
                 : null)
-                
             : 
                 <form className='education-form'>
                     <label>
                         <h3>{educationFormLabels.school}</h3>
-                        <input type="text" value={educationInfo.institutionName}/>
+                        <input type="text" value={educationInfo.institutionName} onChange={onChangeEducationInfo} data-key={'institutionName'}/>
                     </label>
 
                     <label>
                         <h3>{educationFormLabels.degree}</h3>
-                        <input type="text" value={educationInfo.degree}/>
+                        <input type="text" value={educationInfo.degree} onChange={onChangeEducationInfo} data-key={'degree'}/>
                     </label>
 
                     <div className="label-container">
                         <label className='start-date'>
                             <h3>{educationFormLabels.startDate}</h3>
-                            <input type="text" value={educationInfo.startDate}/>
+                            <input type="text" value={educationInfo.startDate} onChange={onChangeEducationInfo} data-key={'startDate'}/>
                         </label>
 
                         <label className='end-date'>
                             <h3>{educationFormLabels.endDate}</h3>
-                            <input type="text" value={educationInfo.endDate}/>
+                            <input type="text" value={educationInfo.endDate} onChange={onChangeEducationInfo} data-key={'endDate'}/>
                         </label>
                     </div>
 
                     <label>
                         <h3>{educationFormLabels.address}</h3>
-                        <input type="text" value={educationInfo.location}/>
+                        <input type="text" value={educationInfo.location} onChange={onChangeEducationInfo} data-key={'location'}/>
                     </label>
 
                     <div className="education-form-button-container">

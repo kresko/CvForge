@@ -1,6 +1,6 @@
 import './RendererBodySection.css';
 
-function RendererBodySection({ testInfo, startDate, endDate, location, insitutionName, degree, description='', resumeInfo, isDefaultDataUsed }) {
+function RendererBodySection({ startDate, endDate, location, insitutionName, degree, description='', resumeInfo, isDefaultDataUsed }) {
     return (
         <>
             <div className={`renderer-body-section ${(resumeInfo || !isDefaultDataUsed) ? 'hidden' : ''}`}>
