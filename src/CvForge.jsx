@@ -152,7 +152,8 @@ function CvForge() {
               isExperimentalPhysicistJobExperienceItemRemoved={isExperimentalPhysicistJobExperienceItemRemoved}
             /> )}
 
-          { isFormToggled == defaultDataset.forms.formCustomizer && (<FormCustomizer />)}
+          { isFormToggled == defaultDataset.forms.formCustomizer && 
+            (<FormCustomizer />)}
         </div>
       </div>
 

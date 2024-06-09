@@ -1,0 +1,19 @@
+:root {
+    --white: #fff;
+    --black: #000;
+}
+
+.form-customizer-layout,
+.form-customizer-color,
+.form-customizer-fonts {
+    color: var(--black);
+    background: var(--white);
+    margin: 20px 0;
+    padding: 15px 20px;
+}
+
+.form-customizer-layout {}
+
+.form-customizer-color {}
+
+.form-customizer-fonts {}
