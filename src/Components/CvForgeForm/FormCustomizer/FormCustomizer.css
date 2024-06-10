@@ -1,6 +1,7 @@
 :root {
     --white: #fff;
     --black: #000;
+    --default-border-radius: 12px;
 }
 
 .form-customizer-layout,
@@ -12,8 +13,49 @@
     padding: 15px 20px;
 }
 
-.form-customizer-layout {}
+.form-customizer-layout,
+.form-customizer-color,
+.form-customizer-fonts {
+    border-radius: var(--default-border-radius);
+}
 
-.form-customizer-color {}
+.form-customizer-layout .layout-button-container button {
+    border: none;
+    background-color: transparent;
+}
+
+.form-customizer-layout .layout-button-container button .layout {
+    border: 1px solid gray;
+    border-radius: 8px;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+
+.form-customizer-layout .layout-button-container button .layout-top {
+    background: linear-gradient(180deg, #0e374e 50%, #fff 50%);
+}
+
+.form-customizer-layout .layout-button-container button .layout-left {
+    background: linear-gradient(90deg, #0e374e 50%, #fff 50%);
+}
+
+.form-customizer-layout .layout-button-container button .layout-right {
+    background: linear-gradient(90deg, #fff 50%, #0e374e 50%);
+}
+
+.form-customizer-color {
+
+}
+
+.form-customizer-color .color-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.form-customizer-color .color-button .red {
+    background: red;
+}
 
 .form-customizer-fonts {}

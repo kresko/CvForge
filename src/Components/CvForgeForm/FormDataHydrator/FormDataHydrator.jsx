@@ -7,7 +7,7 @@ function FormDataHydrator({ loadDefaultData, clearDefaultData }) {
         <>
             <div className="form-data-hydrator">
                 <div className="form-data-hydrator-button-container">
-                    <FormDataHydratorButton content={ 'Clear resume' } classname={'red'} icon={<FaTrash />} defaultDataClickHandler={clearDefaultData}/>
+                    <FormDataHydratorButton content={ 'Clear resume' } classname={'danger'} icon={<FaTrash />} defaultDataClickHandler={clearDefaultData}/>
                     <FormDataHydratorButton content={ 'Load example' } defaultDataClickHandler={loadDefaultData}/>
                 </div>
             </div>
