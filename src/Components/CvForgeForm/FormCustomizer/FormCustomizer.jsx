@@ -38,6 +38,23 @@ function FormCustomizer() {
 
             <div className="form-customizer-fonts">
                 <h2>Fonts</h2>
+
+                <div className="fonts-container">
+                    <div className="font-block font-serif">
+                        <p className='font-test'>Aa</p>
+                        <p>Serif</p>
+                    </div>
+
+                    <div className="font-block font-sans">
+                        <p className='font-test'>Aa</p>
+                        <p>Sans</p>
+                    </div>
+
+                    <div className="font-block font-mono">
+                        <p className='font-test'>Aa</p>
+                        <p>Mono</p>
+                    </div>
+                </div>
             </div>
         </>
     );
