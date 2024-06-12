@@ -19,31 +19,6 @@
     border-radius: var(--default-border-radius);
 }
 
-.form-customizer-layout .layout-button-container button {
-    border: none;
-    background-color: transparent;
-}
-
-.form-customizer-layout .layout-button-container button .layout {
-    border: 1px solid gray;
-    border-radius: 8px;
-    height: 50px;
-    width: 50px;
-    margin: 10px;
-}
-
-.form-customizer-layout .layout-button-container button .layout-top {
-    background: linear-gradient(180deg, #0e374e 50%, #fff 50%);
-}
-
-.form-customizer-layout .layout-button-container button .layout-left {
-    background: linear-gradient(90deg, #0e374e 50%, #fff 50%);
-}
-
-.form-customizer-layout .layout-button-container button .layout-right {
-    background: linear-gradient(90deg, #fff 50%, #0e374e 50%);
-}
-
 .form-customizer-color .color-container {
     display: flex;
 }

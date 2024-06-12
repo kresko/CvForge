@@ -24,6 +24,7 @@ function CvForge() {
   const [isMastersDegreeEducationItemRemoved, setIsMastersDegreeEducationItemRemoved] = useState(false);
   const [isTheoreticalPhysicistJobExperienceItemRemoved, setIsTheoreticalPhysicistJobExperienceItemRemoved] = useState(false);
   const [isExperimentalPhysicistJobExperienceItemRemoved, setIsExperimentalPhysicistJobExperienceItemRemoved] = useState(false);
+  const [layoutPosition, setLayoutPosition] = useState(defaultDataset.layoutPosition.layoutPositionTop);
 
   function onChangePersonalInfo(e) {
     const { key } = e.target.dataset;
@@ -108,10 +109,14 @@ function CvForge() {
     setIsExperimentalPhysicistJobExperienceItemRemoved(true);
   }
 
+  function changeLayoutPosition(layoutPosition) {
+    setLayoutPosition(layoutPosition)
+  }
+
   return (
     <>
       <div className="cv-forge-form">
-        <FormConfigurator toggleForm={toggleForm}/>
+        <FormConfigurator toggleForm={toggleForm} isFormToggled={isFormToggled}/>
 
         <div className='form-toggler'>
           <FormDataHydrator 
@@ -153,7 +158,7 @@ function CvForge() {
             /> )}
 
           { isFormToggled == defaultDataset.forms.formCustomizer && 
-            (<FormCustomizer />)}
+            (<FormCustomizer layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition} />)}
         </div>
       </div>
 

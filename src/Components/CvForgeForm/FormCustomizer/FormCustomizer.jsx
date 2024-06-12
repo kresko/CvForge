@@ -1,26 +1,18 @@
+import FormCustomizerButtonLeft from '../FormCustomizerButton/FormCustomizerButtonLeft';
+import FormCustomizerButtonRight from '../FormCustomizerButton/FormCustomizerButtonRight';
+import FormCustomizerButtonTop from '../FormCustomizerButton/FormCustomizerButtonTop';
 import './FormCustomizer.css';
 
-function FormCustomizer() {
+function FormCustomizer({ layoutPosition, changeLayoutPosition }) {
     return (
         <>
             <div className="form-customizer-layout">
                 <h2>Layout</h2>
 
                 <div className="layout-button-container">
-                    <button>
-                        <div className='layout layout-top'></div>
-                        Top
-                    </button>
-
-                    <button>
-                        <div className='layout layout-left'></div>
-                        Left
-                    </button>
-
-                    <button>
-                        <div className='layout layout-right'></div>
-                        Right
-                    </button>
+                    <FormCustomizerButtonTop layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition}/>
+                    <FormCustomizerButtonLeft layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition}/>
+                    <FormCustomizerButtonRight layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition}/>
                 </div>                
             </div>
 
@@ -60,4 +52,5 @@ function FormCustomizer() {
     );
 }
 
+FormCustomizer.propTypes;
 export default FormCustomizer;

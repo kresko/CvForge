@@ -1,0 +1,14 @@
+.form-configurator-customize-button {
+    margin: 10px 10px;
+    padding: 20px 10px;
+    font-size: 16px;
+    font-weight: 900;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 12px;
+}
+
+.form-configurator-customize-button.selected {
+    color: #0e374e;
+    background: #f5f5f5;
+}

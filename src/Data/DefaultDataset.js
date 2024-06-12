@@ -130,6 +130,12 @@ const defaultDataset = {
     forms: {
       formController: 'formController',
       formCustomizer: 'formCustomizer'
+    },
+
+    layoutPosition: {
+      layoutPositionTop: 'layout-position-top',
+      layoutPositionLeft: 'layout-position-left',
+      layoutPositionRight: 'layout-position-right'
     }
 }
 
