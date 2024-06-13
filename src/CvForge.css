@@ -22,3 +22,12 @@
     background-color: #fff;
     color: #000;
 }
+
+.cv-forge-renderer.layout-position-left {
+    display: flex;
+}
+
+.cv-forge-renderer.layout-position-right {
+    display: flex;
+    flex-direction: row-reverse;
+}

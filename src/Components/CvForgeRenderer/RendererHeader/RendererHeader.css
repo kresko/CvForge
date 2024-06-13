@@ -4,6 +4,15 @@
     color: #fff;
 }
 
+.renderer-header.layout-position-left {
+    width: 40%;
+}
+
+.renderer-header.layout-position-right {
+    width: 40%;
+}
+
+
 .renderer-header-label {
     text-align: center;
     margin-bottom: 10px;
@@ -12,4 +21,10 @@
 .renderer-header-contact-info {
     display: flex;
     justify-content: space-around;
+}
+
+.renderer-header-contact-info.layout-position-left,
+.renderer-header-contact-info.layout-position-right {
+    display: inherit;
+    flex-direction: column;
 }

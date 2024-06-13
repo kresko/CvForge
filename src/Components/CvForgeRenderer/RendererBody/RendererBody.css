@@ -1,6 +1,15 @@
+.render-body-container.position-layout-top {}
+
+.render-body-container.layout-position-left {
+    width: 60%;
+}
+
+.render-body-container.layout-position-right {
+    width: 60%;
+}
+
 .renderer-body-education {
-    margin-top: 30px;
-    padding: 0 20px;
+    padding: 30px 20px 0 20px;
 }
 
 .renderer-body-education h3 {
@@ -11,8 +20,7 @@
 }
 
 .renderer-body-experience {
-    padding: 0 30px;
-    margin-top: 20px;
+    padding: 20px 20px 0 20px;
 }
 
 .renderer-body-experience h3 {

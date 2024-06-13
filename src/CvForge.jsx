@@ -162,11 +162,13 @@ function CvForge() {
         </div>
       </div>
 
-      <div className="cv-forge-renderer">
+      <div className={`cv-forge-renderer ${layoutPosition}`}>
         <RendererHeader fullName={personalInfo.fullName} 
             email={personalInfo.email} 
             phone={personalInfo.phoneNumber} 
-            address={personalInfo.address}/>
+            address={personalInfo.address}
+            layoutPosition={layoutPosition}
+            />
 
         <RendererBody
           educationInfoBachelorDegree={educationInfoBachelorDegree} 
@@ -178,6 +180,7 @@ function CvForge() {
           theoreticalPhysicistJobExperienceInfo={isTheoreticalPhysicistJobExperienceInfoHidden}
           experimentalPhysicistJobExperienceInfo={isExperimentalPhysicistJobExperienceInfoHidden}
           isDefaultDataUsed={isDefaultDataUsed}
+          layoutPosition={layoutPosition}
           />
       </div>
     </>
