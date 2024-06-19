@@ -25,6 +25,7 @@ function CvForge() {
   const [isTheoreticalPhysicistJobExperienceItemRemoved, setIsTheoreticalPhysicistJobExperienceItemRemoved] = useState(false);
   const [isExperimentalPhysicistJobExperienceItemRemoved, setIsExperimentalPhysicistJobExperienceItemRemoved] = useState(false);
   const [layoutPosition, setLayoutPosition] = useState(defaultDataset.layoutPosition.layoutPositionTop);
+  const [selectedColor, setSelectedColor] = useState(defaultDataset.formCustomizerColors);
 
   function onChangePersonalInfo(e) {
     const { key } = e.target.dataset;
@@ -113,6 +114,10 @@ function CvForge() {
     setLayoutPosition(layoutPosition)
   }
 
+  function changeSelectedColor(selectedColor) {
+    setSelectedColor(selectedColor);
+  }
+
   return (
     <>
       <div className="cv-forge-form">
@@ -158,7 +163,10 @@ function CvForge() {
             /> )}
 
           { isFormToggled == defaultDataset.forms.formCustomizer && 
-            (<FormCustomizer layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition} />)}
+            (<FormCustomizer layoutPosition={layoutPosition} 
+              changeLayoutPosition={changeLayoutPosition} 
+              selectedColor={selectedColor}
+              changeSelectedColor={changeSelectedColor}/>)}
         </div>
       </div>
 
@@ -168,6 +176,8 @@ function CvForge() {
             phone={personalInfo.phoneNumber} 
             address={personalInfo.address}
             layoutPosition={layoutPosition}
+            selectedColor={selectedColor}
+            changeSelectedColor={changeSelectedColor}
             />
 
         <RendererBody

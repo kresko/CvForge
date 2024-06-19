@@ -23,33 +23,6 @@
     display: flex;
 }
 
-.form-customizer-color .color-button {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 20px 10px;
-}
-
-.form-customizer-color .color-container .color-button.red {
-    background: red;
-}
-
-.form-customizer-color .color-container .color-button.green {
-    background-color: green;
-}
-
-.form-customizer-color .color-container .color-button.blue {
-    background: blue;
-}
-
-.form-customizer-color .color-container .color-button.purple {
-    background: purple;
-}
-
-.form-customizer-color .color-container .color-button.brown {
-    background: brown;
-}
-
 .form-customizer-fonts {}
 
 .form-customizer-fonts .font-test {

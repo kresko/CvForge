@@ -1,9 +1,14 @@
 import FormCustomizerButtonLeft from '../FormCustomizerButton/FormCustomizerButtonLeft';
 import FormCustomizerButtonRight from '../FormCustomizerButton/FormCustomizerButtonRight';
 import FormCustomizerButtonTop from '../FormCustomizerButton/FormCustomizerButtonTop';
+import FormCustomizerColorButtonRed from '../FormCustomizerColorButton/FormCustomizerColorButtonRed';
+import FormCustomizerColorButtonBlue from '../FormCustomizerColorButton/FormCustomizerColorButtonBlue';
+import FormCustomizerColorButtonGreen from '../FormCustomizerColorButton/FormCustomizerColorButtonGreen';
+import FormCustomizerColorButtonPurple from '../FormCustomizerColorButton/FormCustomizerColorButtonPurple';
+import FormCustomizerColorButtonBrown from '../FormCustomizerColorButton/FormCustomizerColorButtonBrown';
 import './FormCustomizer.css';
 
-function FormCustomizer({ layoutPosition, changeLayoutPosition }) {
+function FormCustomizer({ layoutPosition, changeLayoutPosition, selectedColor, changeSelectedColor }) {
     return (
         <>
             <div className="form-customizer-layout">
@@ -20,11 +25,21 @@ function FormCustomizer({ layoutPosition, changeLayoutPosition }) {
                 <h2>Color</h2>
 
                 <div className="color-container">
-                    <div className="color-button red"></div>
-                    <div className="color-button green"></div>
-                    <div className="color-button blue"></div>
-                    <div className="color-button purple"></div>
-                    <div className="color-button brown"></div>
+                    <FormCustomizerColorButtonRed
+                        selectedColor={selectedColor}
+                        changeSelectedColor={changeSelectedColor}/>
+                    <FormCustomizerColorButtonBlue
+                        selectedColor={selectedColor}
+                        changeSelectedColor={changeSelectedColor}/>
+                    <FormCustomizerColorButtonGreen
+                        selectedColor={selectedColor}
+                        changeSelectedColor={changeSelectedColor}/>
+                    <FormCustomizerColorButtonPurple
+                        selectedColor={selectedColor}
+                        changeSelectedColor={changeSelectedColor}/>
+                    <FormCustomizerColorButtonBrown
+                        selectedColor={selectedColor}
+                        changeSelectedColor={changeSelectedColor}/>
                 </div>
             </div>
 

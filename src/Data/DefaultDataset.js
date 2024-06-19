@@ -136,6 +136,14 @@ const defaultDataset = {
       layoutPositionTop: 'layout-position-top',
       layoutPositionLeft: 'layout-position-left',
       layoutPositionRight: 'layout-position-right'
+    },
+
+    formCustomizerColors: {
+      red: 'red',
+      blue: 'blue',
+      green: 'green',
+      purple: 'purple',
+      brown: 'brown'
     }
 }
 
