@@ -21,22 +21,28 @@
 }
 
 .education-section {
+    font-family: inherit;
     background-color: var(--white);
     margin: var(--default-margin);
     border-radius: var(--default-border-radius);
 }
 
 .experience-section {
+    font-family: inherit;
     background-color: var(--white);
     margin: var(--default-margin);
     margin-bottom: 0;
     border-radius: var(--default-border-radius);
 }
 
+.form-data-controller-dropdown-section {
+    font-family: inherit;
+}
 
 .form-data-controller-dropdown-section-item-collection {
     display: flex;
     flex-direction: column;
+    font-family: inherit;
 }
 
 .is-hidden {
@@ -52,6 +58,7 @@
     border: inherit;
     border-radius: inherit;
     background-color: inherit;
+    font-family: inherit;
 }
 
 .form-data-controller-dropdown-section-button span {

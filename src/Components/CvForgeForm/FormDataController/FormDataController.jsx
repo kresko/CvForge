@@ -15,7 +15,7 @@ function FormDataController({ onChange, onChangeEducationInfoBachelorDegree, onC
     mastersDegreeEducationInfo, mastersDegreeEducationInfoClickHandler, theoreticalPhysicistJobExperienceInfo, theoreticalPhysicistJobExperienceInfoClickHandler, 
     experimentalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfoClickHandler, isDefaultDataUsed, removeBachelorDegreeEducationItem, isbachelorDegreeEducationItemRemoved,
     removeMastersDegreeEducationItem, isMastersDegreeEducationItemRemoved, removeTheoreticalPhysicistJobExperienceItem, isTheoreticalPhysicistJobExperienceItemRemoved, removeExperimentalPhysicistJobExperienceItem,
-    isExperimentalPhysicistJobExperienceItemRemoved}) {
+    isExperimentalPhysicistJobExperienceItemRemoved, selectedFont}) {
     const [isEducationDropdownOpen, setIsEducationDropdownOpen] = useState(true);
     const [isExperienceDropdownOpen, setIsExperienceDropdownOpen] = useState(true);
 
@@ -29,7 +29,7 @@ function FormDataController({ onChange, onChangeEducationInfoBachelorDegree, onC
 
     return (
         <>
-            <div className='form-data-controller'>
+            <div className={`form-data-controller ${selectedFont}`}>
                 <div className="personal-details">
                 <h2>Personal details</h2>
 

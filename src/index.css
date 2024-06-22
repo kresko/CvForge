@@ -10,5 +10,16 @@
 
 body {
     background-color: #f3f4f6;
+}
+
+.selected-font-noto-sans {
     font-family: 'NoTo Sans';
+}
+
+.selected-font-serif {
+    font-family: 'serif';
+}
+
+.selected-font-monospace {
+    font-family: monospace;
 }

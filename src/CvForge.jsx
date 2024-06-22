@@ -25,7 +25,8 @@ function CvForge() {
   const [isTheoreticalPhysicistJobExperienceItemRemoved, setIsTheoreticalPhysicistJobExperienceItemRemoved] = useState(false);
   const [isExperimentalPhysicistJobExperienceItemRemoved, setIsExperimentalPhysicistJobExperienceItemRemoved] = useState(false);
   const [layoutPosition, setLayoutPosition] = useState(defaultDataset.layoutPosition.layoutPositionTop);
-  const [selectedColor, setSelectedColor] = useState(defaultDataset.formCustomizerColors);
+  const [selectedColor, setSelectedColor] = useState(defaultDataset.formCustomizerColors.blue);
+  const [selectedFont, setSelectedFont] = useState(defaultDataset.formCustomizerFonts.noToSans);
 
   function onChangePersonalInfo(e) {
     const { key } = e.target.dataset;
@@ -118,15 +119,20 @@ function CvForge() {
     setSelectedColor(selectedColor);
   }
 
+  function changeSelectedFont(selectedFont) {
+    setSelectedFont(selectedFont);
+  }
+
   return (
     <>
       <div className="cv-forge-form">
-        <FormConfigurator toggleForm={toggleForm} isFormToggled={isFormToggled}/>
+        <FormConfigurator toggleForm={toggleForm} isFormToggled={isFormToggled} selectedFont={selectedFont}/>
 
         <div className='form-toggler'>
           <FormDataHydrator 
             loadDefaultData={loadDefaultData}
             clearDefaultData={clearDefaultData} 
+            selectedFont={selectedFont}
           />
 
           { isFormToggled == defaultDataset.forms.formController && ( 
@@ -160,13 +166,16 @@ function CvForge() {
               isTheoreticalPhysicistJobExperienceItemRemoved={isTheoreticalPhysicistJobExperienceItemRemoved}
               removeExperimentalPhysicistJobExperienceItem={removeExperimentalPhysicistJobExperienceItem}
               isExperimentalPhysicistJobExperienceItemRemoved={isExperimentalPhysicistJobExperienceItemRemoved}
+              selectedFont={selectedFont}
             /> )}
 
           { isFormToggled == defaultDataset.forms.formCustomizer && 
             (<FormCustomizer layoutPosition={layoutPosition} 
               changeLayoutPosition={changeLayoutPosition} 
               selectedColor={selectedColor}
-              changeSelectedColor={changeSelectedColor}/>)}
+              changeSelectedColor={changeSelectedColor}
+              selectedFont={selectedFont}
+              changeSelectedFont={changeSelectedFont}/>)}
         </div>
       </div>
 
@@ -177,7 +186,7 @@ function CvForge() {
             address={personalInfo.address}
             layoutPosition={layoutPosition}
             selectedColor={selectedColor}
-            changeSelectedColor={changeSelectedColor}
+            selectedFont={selectedFont}
             />
 
         <RendererBody
@@ -191,6 +200,7 @@ function CvForge() {
           experimentalPhysicistJobExperienceInfo={isExperimentalPhysicistJobExperienceInfoHidden}
           isDefaultDataUsed={isDefaultDataUsed}
           layoutPosition={layoutPosition}
+          selectedFont={selectedFont}
           />
       </div>
     </>

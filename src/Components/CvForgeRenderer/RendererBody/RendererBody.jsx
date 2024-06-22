@@ -4,10 +4,10 @@ import './RendererBody.css';
 
 function RendererBody({ 
     educationInfoBachelorDegree, educationInfoMastersDegree, experienceInfoTheoreticalPhysicistJob, experienceInfoExperimentalPhysicistJob, bachelorDegreeEducationInfo, 
-    mastersDegreeEducationInfo, theoreticalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfo, isDefaultDataUsed, layoutPosition }) {
+    mastersDegreeEducationInfo, theoreticalPhysicistJobExperienceInfo, experimentalPhysicistJobExperienceInfo, isDefaultDataUsed, layoutPosition, selectedFont }) {
     return (
         <>
-            <div className={`render-body-container ${layoutPosition}`}>
+            <div className={`render-body-container ${layoutPosition} ${selectedFont}`}>
                 <div className="renderer-body-education">
                     <h3>{defaultDataset.education.label}</h3>
 

@@ -22,27 +22,3 @@
 .form-customizer-color .color-container {
     display: flex;
 }
-
-.form-customizer-fonts {}
-
-.form-customizer-fonts .font-test {
-    font-size: 24px;
-}
-
-.form-customizer-fonts h2 {
-    margin-bottom: 15px;
-}
-
-.form-customizer-fonts .fonts-container {
-    display: flex;
-}
-
-.form-customizer-fonts .fonts-container .font-block {
-    width: 50px;
-    height: 60px;
-    border: 1px solid #000;
-    border-radius: 8px;
-    padding: 8px 12px;
-    margin-right: 10px;
-    text-align: center;
-}

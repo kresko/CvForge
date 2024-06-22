@@ -4,10 +4,10 @@ import FormConfiguratorCustomizeButton from '../FormConfiguratorCustomizeButton/
 import { FaRegFileLines } from "react-icons/fa6";
 import { FaPenRuler } from "react-icons/fa6";
 
-function FormConfigurator({ toggleForm, isFormToggled }) {
+function FormConfigurator({ toggleForm, isFormToggled, selectedFont }) {
     return (
         <>
-            <div className='form-configurator'>
+            <div className={`form-configurator ${selectedFont}`}>
                 <div className='vertical-align'>
                     <div className='form-configurator-button-container'>
                         <FormConfiguratorContentButton content={ 'Content' } icon={<FaRegFileLines />} toggleForm={toggleForm} id={isFormToggled} />

@@ -1,6 +1,29 @@
 .renderer-header {
     padding: 30px 20px 25px 20px;
+}
+
+.selected-color-blue {
     background-color: #0e374e;
+    color: #fff;
+}
+
+.selected-color-red {
+    background-color: red;
+    color: #fff;
+}
+
+.selected-color-green {
+    background-color: green;
+    color: #fff;
+}
+
+.selected-color-purple {
+    background-color: purple;
+    color: #fff;
+}
+
+.selected-color-brown {
+    background-color: brown;
     color: #fff;
 }
 

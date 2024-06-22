@@ -1,9 +1,15 @@
+import defaultDataset from '../../../Data/DefaultDataset';
 import './FormCustomizerColorButton.css';
 
-function FormCustomizerColorButtonBrown() {
+function FormCustomizerColorButtonBrown({ selectedColor, changeSelectedColor }) {
+
+    function handleChangeSelectedColor() {
+        changeSelectedColor(defaultDataset.formCustomizerColors.brown);
+    }
+
     return (
         <>
-            <div className="color-button brown"></div>
+            <div className={`color-button brown ${selectedColor === defaultDataset.formCustomizerColors.brown ? 'selected-color' : ''}`} onClick={handleChangeSelectedColor}></div>
         </>
     );
 }

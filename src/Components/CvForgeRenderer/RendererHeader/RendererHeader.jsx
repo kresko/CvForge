@@ -4,10 +4,10 @@ import { FaEnvelope } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
 
-function RendererHeader({ fullName, email, phone, address, layoutPosition }) {
+function RendererHeader({ fullName, email, phone, address, layoutPosition, selectedColor, selectedFont }) {
     return (
         <>
-            <div className={`renderer-header ${layoutPosition}`}>
+            <div className={`renderer-header ${layoutPosition} selected-color-${selectedColor} ${selectedFont}`}>
                 <h1 className="renderer-header-label">{ fullName }</h1>
 
                 <div className={`renderer-header-contact-info ${layoutPosition}`}>

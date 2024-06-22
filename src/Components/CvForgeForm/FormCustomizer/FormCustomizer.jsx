@@ -6,22 +6,25 @@ import FormCustomizerColorButtonBlue from '../FormCustomizerColorButton/FormCust
 import FormCustomizerColorButtonGreen from '../FormCustomizerColorButton/FormCustomizerColorButtonGreen';
 import FormCustomizerColorButtonPurple from '../FormCustomizerColorButton/FormCustomizerColorButtonPurple';
 import FormCustomizerColorButtonBrown from '../FormCustomizerColorButton/FormCustomizerColorButtonBrown';
+import FontCustomizerFontNoToSansButton from '../FormCustomizerFontButton/FormCustomizerFontNoToSansButton';
+import FontCustomizerFontSerifButton from '../FormCustomizerFontButton/FormCustomizerFontSerifButton';
+import FontCustomizerFontMonospaceButton from '../FormCustomizerFontButton/FormCustomizerFontMonospaceButton';
 import './FormCustomizer.css';
 
-function FormCustomizer({ layoutPosition, changeLayoutPosition, selectedColor, changeSelectedColor }) {
+function FormCustomizer({ layoutPosition, changeLayoutPosition, selectedColor, changeSelectedColor, selectedFont, changeSelectedFont }) {
     return (
         <>
-            <div className="form-customizer-layout">
+            <div className={`form-customizer-layout ${selectedFont}`}>
                 <h2>Layout</h2>
 
                 <div className="layout-button-container">
-                    <FormCustomizerButtonTop layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition}/>
-                    <FormCustomizerButtonLeft layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition}/>
-                    <FormCustomizerButtonRight layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition}/>
+                    <FormCustomizerButtonTop layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition} selectedFont={selectedFont}/>
+                    <FormCustomizerButtonLeft layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition} selectedFont={selectedFont}/>
+                    <FormCustomizerButtonRight layoutPosition={layoutPosition} changeLayoutPosition={changeLayoutPosition} selectedFont={selectedFont}/>
                 </div>                
             </div>
 
-            <div className="form-customizer-color">
+            <div className={`form-customizer-color ${selectedFont}`}>
                 <h2>Color</h2>
 
                 <div className="color-container">
@@ -43,24 +46,19 @@ function FormCustomizer({ layoutPosition, changeLayoutPosition, selectedColor, c
                 </div>
             </div>
 
-            <div className="form-customizer-fonts">
+            <div className={`form-customizer-fonts ${selectedFont}`}>
                 <h2>Fonts</h2>
 
                 <div className="fonts-container">
-                    <div className="font-block font-serif">
-                        <p className='font-test'>Aa</p>
-                        <p>Serif</p>
-                    </div>
-
-                    <div className="font-block font-sans">
-                        <p className='font-test'>Aa</p>
-                        <p>Sans</p>
-                    </div>
-
-                    <div className="font-block font-mono">
-                        <p className='font-test'>Aa</p>
-                        <p>Mono</p>
-                    </div>
+                    <FontCustomizerFontSerifButton
+                        selectedFont={selectedFont}
+                        changeSelectedFont={changeSelectedFont}/>
+                    <FontCustomizerFontNoToSansButton
+                        selectedFont={selectedFont}
+                        changeSelectedFont={changeSelectedFont}/>
+                    <FontCustomizerFontMonospaceButton
+                        selectedFont={selectedFont}
+                        changeSelectedFont={changeSelectedFont}/>
                 </div>
             </div>
         </>

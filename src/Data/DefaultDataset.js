@@ -144,6 +144,12 @@ const defaultDataset = {
       green: 'green',
       purple: 'purple',
       brown: 'brown'
+    },
+
+    formCustomizerFonts: {
+      noToSans: 'selected-font-noto-sans',
+      serif: 'selected-font-serif',
+      monospace: 'selected-font-monospace'
     }
 }
 
