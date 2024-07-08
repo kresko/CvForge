@@ -1,6 +1,6 @@
 # CV Forge
 
-This simple FE application renders a Cv with simple layout.
+This simple FE application renders a CV with simple layout.
 
 Currently, only beta version is available.
 
